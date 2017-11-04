@@ -1,0 +1,79 @@
+{
+    "VENTA": [
+      {
+        "ID": 1,
+        "FECHA": "2017-04-08",
+        "CLIENTE_ID": 1
+      },
+      {
+        "ID": 2,
+        "FECHA": "2016-07-06",
+        "CLIENTE_ID": 2
+      },
+      {
+        "ID": 3,
+        "FECHA": "2015-10-01",
+        "CLIENTE_ID": 3
+      },
+      {
+        "ID": 4,
+        "FECHA": "2015-02-04",
+        "CLIENTE_ID": 4
+      },
+      {
+        "ID": 5,
+        "FECHA": "2015-12-30",
+        "CLIENTE_ID": 5
+      },
+      {
+        "ID": 6,
+        "FECHA": "2014-03-27",
+        "CLIENTE_ID": 6
+      },
+      {
+        "ID": 7,
+        "FECHA": "2015-12-29",
+        "CLIENTE_ID": 7
+      },
+      {
+        "ID": 8,
+        "FECHA": "2015-06-05",
+        "CLIENTE_ID": 8
+      },
+      {
+        "ID": 9,
+        "FECHA": "2016-04-24",
+        "CLIENTE_ID": 9
+      },
+      {
+        "ID": 10,
+        "FECHA": "2015-02-07",
+        "CLIENTE_ID": 10
+      },
+      {
+        "ID": 11,
+        "FECHA": "2014-04-06",
+        "CLIENTE_ID": 11
+      },
+      {
+        "ID": 12,
+        "FECHA": "2015-05-21",
+        "CLIENTE_ID": 12
+      },
+      {
+        "ID": 13,
+        "FECHA": "2017-09-12",
+        "CLIENTE_ID": 13
+      },
+      {
+        "ID": 14,
+        "FECHA": "2014-08-18",
+        "CLIENTE_ID": 14
+      },
+      {
+        "ID": 15,
+        "FECHA": "2014-09-26",
+        "CLIENTE_ID": 15
+      }
+    ]
+  }

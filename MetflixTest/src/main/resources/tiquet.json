@@ -1,0 +1,109 @@
+{
+    "TIQUET": [
+      {
+        "id": 1,
+        "asunto": "reprehenderit in",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2016-11-13",
+        "cliente_id": 1
+      },
+      {
+        "id": 2,
+        "asunto": "fugiat minim",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2017-09-11",
+        "cliente_id": 2
+      },
+      {
+        "id": 3,
+        "asunto": "do aute",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2014-11-05",
+        "cliente_id": 3
+      },
+      {
+        "id": 4,
+        "asunto": "nulla dolore",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2016-03-16",
+        "cliente_id": 4
+      },
+      {
+        "id": 5,
+        "asunto": "nulla commodo",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2015-05-02",
+        "cliente_id": 5
+      },
+      {
+        "id": 6,
+        "asunto": "excepteur nisi",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2015-07-18",
+        "cliente_id": 6
+      },
+      {
+        "id": 7,
+        "asunto": "cupidatat aliquip",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2016-04-11",
+        "cliente_id": 7
+      },
+      {
+        "id": 8,
+        "asunto": "ut esse",
+		"descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2016-11-24",
+        "cliente_id": 8
+      },
+      {
+        "id": 9,
+        "asunto": "in pariatur",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2015-04-26",
+        "cliente_id": 9
+      },
+      {
+        "id": 10,
+        "asunto": "enim elit",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2015-05-26",
+        "cliente_id": 10
+      },
+      {
+        "id": 11,
+        "asunto": "ipsum laboris",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2016-01-13",
+        "cliente_id": 11
+      },
+      {
+        "id": 12,
+        "asunto": "eu ipsum",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2016-08-01",
+        "cliente_id": 12
+      },
+      {
+        "id": 13,
+        "asunto": "do consequat",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2014-03-07",
+        "cliente_id": 13
+      },
+      {
+        "id": 14,
+        "asunto": "minim voluptate",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2017-04-01",
+        "cliente_id": 14
+      },
+      {
+        "id": 15,
+        "asunto": "minim anim",
+        "descripcion": "Amet occaecat amet nostrud ipsum aute enim non duis Lorem eiusmod voluptate voluptate tempor ad. Pariatur id consequat qui occaecat velit.",
+        "fecha": "2015-12-26",
+        "cliente_id": 15
+      }
+    ]
+  }

@@ -1,0 +1,169 @@
+{
+	"PELICULA": [
+	{
+        "ID": 1,
+        "CLASIF": "elit",
+        "DIRECTOR": "dolor",
+        "FECHA_ESTRENO": "2014-01-04",
+        "IDIOMA": "tempor",
+        "PAIS": "Iola",
+        "REPARTO": "eiusmod",
+        "SINOPSIS": "Eu non sit deserunt officia fugiat est exercitation cillum adipisicing aliqua elit aute exercitation sit.",
+        "TITULO": "reprehenderit"
+      },
+      {
+        "ID": 2,
+        "CLASIF": "pariatur",
+        "DIRECTOR": "tempor",
+        "FECHA_ESTRENO": "2016-09-24",
+        "IDIOMA": "culpa",
+        "PAIS": "Hatteras",
+        "REPARTO": "in",
+        "SINOPSIS": "Est officia deserunt minim tempor eiusmod sint incIDIDunt consectetur incIDIDunt occaecat. ",
+        "TITULO": "est"
+      },
+      {
+        "ID": 3,
+        "CLASIF": "dolor",
+        "DIRECTOR": "velit",
+        "FECHA_ESTRENO": "2017-03-07",
+        "IDIOMA": "est",
+        "PAIS": "Robinson",
+        "REPARTO": "ipsum",
+        "SINOPSIS": "Fugiat exercitation cupIDatat consectetur laborum do veniam mollit pariatur sunt ad anim ex incIDIDunt. ",
+        "TITULO": "ipsum"  
+      },
+      {
+        "ID": 4,
+        "CLASIF": "consectetur",
+        "DIRECTOR": "est",
+        "FECHA_ESTRENO": "2015-05-22",
+        "IDIOMA": "nostrud",
+        "PAIS": "Edgewater",
+        "REPARTO": "cillum",
+        "SINOPSIS": "Enim incIDIDunt cillum et qui in excepteur est culpa enim incIDIDunt cupIDatat eu. Non minim excepteur dolor consectetur duis duis excepteur ut ullamco mollit.",
+        "TITULO": "aliquip"
+      },
+      {
+        "ID": 5,
+        "CLASIF": "proIDent",
+        "DIRECTOR": "anim",
+        "FECHA_ESTRENO": "2017-08-29",
+        "IDIOMA": "aute",
+        "PAIS": "Madaket",
+        "REPARTO": "nisi",
+        "SINOPSIS": "Quis elit ex laborum et quis eiusmod sunt ullamco laborum. Ex ipsum consectetur est deserunt. ",
+        "TITULO": "pariatur"
+      },
+      {
+        "ID": 6,
+        "CLASIF": "non",
+        "DIRECTOR": "proIDent",
+        "FECHA_ESTRENO": "2017-03-09",
+        "IDIOMA": "elit",
+        "PAIS": "Wawona",
+        "REPARTO": "esse",
+        "SINOPSIS": "Commodo pariatur officia labore adipisicing occaecat labore quis officia commodo amet.",
+        "TITULO": "nulla"
+      },
+      {
+        "ID": 7,
+        "CLASIF": "nulla",
+        "DIRECTOR": "elit",
+        "FECHA_ESTRENO": "2015-06-01",
+        "IDIOMA": "dolore",
+        "PAIS": "Bradenville",
+        "REPARTO": "anim",
+        "SINOPSIS": "Consectetur ID sint eiusmod exercitation occaecat aliqua.",
+        "TITULO": "reprehenderit"
+      },
+      {
+        "ID": 8,
+        "CLASIF": "eiusmod",
+        "DIRECTOR": "exercitation",
+        "FECHA_ESTRENO": "2014-08-27",
+        "IDIOMA": "in",
+        "PAIS": "Brethren",
+        "REPARTO": "eu",
+        "SINOPSIS": "Non mollit nulla qui et qui. Fugiat cupIDatat nulla consectetur irure irure deserunt commodo ID cillum labore culpa.",
+        "TITULO": "pariatur" 
+      },
+      {
+        "ID": 9,
+        "CLASIF": "ullamco",
+        "DIRECTOR": "amet",
+        "FECHA_ESTRENO": "2016-08-11",
+        "IDIOMA": "minim",
+        "PAIS": "Rew",
+        "REPARTO": "excepteur",
+        "SINOPSIS": "Ullamco elit est enim do non dolore enim dolor minim velit ad voluptate pariatur. ",
+        "TITULO": "excepteur"
+      },
+      {
+        "ID": 10,
+        "CLASIF": "est",
+        "DIRECTOR": "exercitation",
+        "FECHA_ESTRENO": "2017-06-09",
+        "IDIOMA": "qui",
+        "PAIS": "Colton",
+        "REPARTO": "esse",
+        "SINOPSIS": "Aute sit ex proIDent exercitation commodo excepteur. Ipsum velit veniam Lorem laboris velit in ID fugiat sunt. Do sint magna anim nostrud Lorem nisi sit.\r\n",
+        "TITULO": "fugiat"
+      },
+      {
+        "ID": 11,
+        "CLASIF": "aliquip",
+        "DIRECTOR": "mollit",
+        "FECHA_ESTRENO": "2016-08-18",
+        "IDIOMA": "mollit",
+        "PAIS": "Greenbackville",
+        "REPARTO": "consectetur",
+        "SINOPSIS": "Veniam proIDent magna veniam dolor ipsum enim ea minim ad officia in. ",
+        "TITULO": "esse"
+      },
+      {
+        "ID": 12,
+        "CLASIF": "laborum",
+        "DIRECTOR": "aute",
+        "FECHA_ESTRENO": "2017-02-21",
+        "IDIOMA": "in",
+        "PAIS": "Benson",
+        "REPARTO": "nostrud",
+        "SINOPSIS": "ProIDent exercitation dolore quis nulla nostrud esse deserunt aute adipisicing veniam tempor deserunt magna.",
+        "TITULO": "occaecat"
+      },
+      {
+        "ID": 13,
+        "CLASIF": "ullamco",
+        "DIRECTOR": "tempor",
+        "FECHA_ESTRENO": "2014-08-30",
+        "IDIOMA": "ea",
+        "PAIS": "Mulberry",
+        "REPARTO": "sint",
+        "SINOPSIS": "Qui proIDent laboris cupIDatat pariatur. Reprehenderit aliquip est sunt aute aliquip voluptate excepteur. Laborum pariatur exercitation consequat eu.\r\n",
+        "TITULO": "est"
+      },
+      {
+        "ID": 14,
+        "CLASIF": "consequat",
+        "DIRECTOR": "reprehenderit",
+        "FECHA_ESTRENO": "2016-11-21",
+        "IDIOMA": "commodo",
+        "PAIS": "Saranap",
+        "REPARTO": "sit",
+        "SINOPSIS": "Do ipsum deserunt laboris ad tempor dolore aliqua nulla. ",
+        "TITULO": "pariatur"
+      },
+      {
+        "ID": 15,
+        "CLASIF": "minim",
+        "DIRECTOR": "esse",
+        "FECHA_ESTRENO": "2015-06-01",
+        "IDIOMA": "nostrud",
+        "PAIS": "Robinette",
+        "REPARTO": "magna",
+        "SINOPSIS": "Sint aute in pariatur tempor adipisicing laborum anim mollit consectetur aliqua tempor. ",
+        "TITULO": "sint"  
+      }
+    ]
+  }

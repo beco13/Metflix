@@ -1,0 +1,124 @@
+{
+    "ADMINISTRADOR": [
+      {
+        "ID": 1,
+        "identificacion": "5868509",
+        "nombre": "reprehenderit",
+        "APELLIDO": "sint",
+        "correo": "1austinfisher@flotonic.com",
+        "contrasena": "commodo"
+      },
+      {
+        "ID": 2,
+        "identificacion": "9385251",
+        "nombre": "est",
+        "APELLIDO": "id",
+        "correo": "2austinfisher@flotonic.com",
+        "contrasena": "elit"
+      },
+      {
+        "ID": 3,
+        "identificacion": "2396441",
+        "nombre": "quis",
+        "APELLIDO": "non",
+        "correo": "3austinfisher@flotonic.com",
+        "contrasena": "dolor"
+      },
+      {
+        "ID": 4,
+        "identificacion": "5221293",
+        "nombre": "irure",
+        "APELLIDO": "in",
+        "correo": "4austinfisher@flotonic.com",
+        "contrasena": "quis"
+      },
+      {
+        "ID": 5,
+        "identificacion": "1145347",
+        "nombre": "voluptate",
+        "APELLIDO": "pariatur",
+        "correo": "5austinfisher@flotonic.com",
+        "contrasena": "ex"
+      },
+      {
+        "ID": 6,
+        "identificacion": "7670550",
+        "nombre": "ad",
+        "APELLIDO": "ut",
+        "correo": "6austinfisher@flotonic.com",
+        "contrasena": "minim"
+      },
+      {
+        "ID": 7,
+        "identificacion": "7860775",
+        "nombre": "do",
+        "APELLIDO": "fugiat",
+        "correo": "7austinfisher@flotonic.com",
+        "contrasena": "labore"
+      },
+      {
+        "ID": 8,
+        "identificacion": "9868395",
+        "nombre": "magna",
+        "APELLIDO": "quis",
+        "correo": "8austinfisher@flotonic.com",
+        "contrasena": "veniam"
+      },
+      {
+        "ID": 9,
+        "identificacion": "9868395",
+        "nombre": "do",
+        "APELLIDO": "laboris",
+        "correo": "9austinfisher@flotonic.com",
+        "contrasena": "est"
+      },
+      {
+        "ID": 10,
+        "identificacion": "8554776",
+        "nombre": "laborum",
+        "APELLIDO": "laborum",
+        "correo": "10austinfisher@flotonic.com",
+        "contrasena": "aliquip"
+      },
+      {
+        "ID": 11,
+        "identificacion": "1908000",
+        "nombre": "culpa",
+        "APELLIDO": "consectetur",
+        "correo": "11austinfisher@flotonic.com",
+        "contrasena": "laborum"
+      },
+      {
+        "ID": 12,
+        "identificacion": "8706337",
+        "nombre": "Lorem",
+        "APELLIDO": "excepteur",
+        "correo": "12austinfisher@flotonic.com",
+        "contrasena": "eu"
+      },
+      {
+        "ID": 13,
+        "identificacion": "1837634",
+        "nombre": "labore",
+        "APELLIDO": "sit",
+        "correo": "13austinfisher@flotonic.com",
+        "contrasena": "exercitation"
+      },
+      {
+        "ID": 14,
+        "identificacion": "9406492",
+        "nombre": "mollit",
+        "APELLIDO": "dolor",
+        "correo": "14austinfisher@flotonic.com",
+        "contrasena": "incididunt"
+      },
+      {
+        "ID": 15,
+        "identificacion": "6992630",
+        "nombre": "do",
+        "APELLIDO": "ullamco",
+        "correo": "15austinfisher@flotonic.com",
+        "contrasena": "mollit"
+      }
+    ]
+  }

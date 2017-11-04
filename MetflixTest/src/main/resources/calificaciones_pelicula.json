@@ -1,0 +1,94 @@
+{
+    "CALIFICACIONES_PELICULA": [
+      {
+        "ID": 1,
+        "CALIFICACION": 40,
+        "CLIENTE_ID": 1,
+        "PELICULA_ID": 1
+      },
+      {
+        "ID": 2,
+        "CALIFICACION": 20,
+        "CLIENTE_ID": 2,
+        "PELICULA_ID": 2
+      },
+      {
+        "ID": 3,
+        "CALIFICACION": 36,
+        "CLIENTE_ID": 3,
+        "PELICULA_ID": 3
+      },
+      {
+        "ID": 4,
+        "CALIFICACION": 2,
+        "CLIENTE_ID": 4,
+        "PELICULA_ID": 4
+      },
+      {
+        "ID": 5,
+        "CALIFICACION": 6,
+        "CLIENTE_ID": 5,
+        "PELICULA_ID": 5
+      },
+      {
+        "ID": 6,
+        "CALIFICACION": 3,
+        "CLIENTE_ID": 6,
+        "PELICULA_ID": 6
+      },
+      {
+        "ID": 7,
+        "CALIFICACION": 23,
+        "CLIENTE_ID": 7,
+        "PELICULA_ID": 7
+      },
+      {
+        "ID": 8,
+        "CALIFICACION": 24,
+        "CLIENTE_ID": 8,
+        "PELICULA_ID": 8
+      },
+      {
+        "ID": 9,
+        "CALIFICACION": 28,
+        "CLIENTE_ID": 9,
+        "PELICULA_ID": 9
+      },
+      {
+        "ID": 10,
+        "CALIFICACION": 11,
+        "CLIENTE_ID": 10,
+        "PELICULA_ID": 10
+      },
+      {
+        "ID": 11,
+        "CALIFICACION": 32,
+        "CLIENTE_ID": 11,
+        "PELICULA_ID": 11
+      },
+      {
+        "ID": 12,
+        "CALIFICACION": 37,
+        "CLIENTE_ID": 12,
+        "PELICULA_ID": 12
+      },
+      {
+        "ID": 13,
+        "CALIFICACION": 29,
+        "CLIENTE_ID": 13,
+        "PELICULA_ID": 13
+      },
+      {
+        "ID": 14,
+        "CALIFICACION": 1,
+        "CLIENTE_ID": 14,
+        "PELICULA_ID": 14
+      },
+      {
+        "ID": 15,
+        "CALIFICACION": 35,
+        "CLIENTE_ID": 15,
+        "PELICULA_ID": 15
+      }
+    ]
+  }

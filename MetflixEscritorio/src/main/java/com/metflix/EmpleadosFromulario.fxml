@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="358.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.metflix.EmpleadosFormularioController">
+   <children>
+      <Text fill="WHITE" layoutX="43.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Pane layoutX="2.0" layoutY="-1.0" prefHeight="57.0" prefWidth="529.0" style="-fx-background-color: #009688;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" layoutX="33.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empleados">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow color="#000000b8" />
+         </effect>
+      </Pane>
+      <JFXTextField fx:id="txt_nombre_empleado" focusColor="#009688" labelFloat="true" layoutX="48.0" layoutY="104.0" prefHeight="27.0" prefWidth="204.0" promptText="Nombre">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txt_apellido_empleado" focusColor="#009688" labelFloat="true" layoutX="275.0" layoutY="104.0" prefHeight="27.0" prefWidth="204.0" promptText="Apellido">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txt_correo_empleado" focusColor="#009688" labelFloat="true" layoutX="48.0" layoutY="164.0" prefHeight="27.0" prefWidth="237.0" promptText="Correo">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txt_identificacion_empleado" focusColor="#009688" labelFloat="true" layoutX="307.0" layoutY="164.0" prefHeight="27.0" prefWidth="174.0" promptText="# Indentificación">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btn_guardar_empleado" defaultButton="true" layoutX="396.0" layoutY="305.0" onAction="#guardarEmpleado" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #009688;" text="Guardar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_editar_empleado" layoutX="295.0" layoutY="304.0" onAction="#editarEmpleado" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: #FFAB40;" text="Editar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_eliminar_empleado" layoutX="202.0" layoutY="305.0" onAction="#eliminarEmpleado" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #DD2C00;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXPasswordField fx:id="txt_contrasena_empleado" focusColor="#009688" labelFloat="true" layoutX="48.0" layoutY="231.0" prefHeight="27.0" prefWidth="204.0" promptText="Contraseña">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="txt_contrasenare_empleado" focusColor="#009688" labelFloat="true" layoutX="274.0" layoutY="232.0" prefHeight="25.0" prefWidth="204.0" promptText="Reingresar Contraseña" />
+   </children>
+</AnchorPane>

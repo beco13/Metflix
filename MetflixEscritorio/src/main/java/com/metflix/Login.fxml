@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="conten_img" blendMode="SRC_ATOP" cacheShape="false" centerShape="false" pickOnBounds="false" prefHeight="440.0" prefWidth="440.0" scaleShape="false" style="-fx-background-image: url('file:src/main/resources/com/metflix/fondo.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.metflix.LoginController">
+   <children>
+      <Pane layoutX="67.0" layoutY="67.0" prefHeight="306.0" prefWidth="306.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Pane layoutY="70.0" prefHeight="237.0" prefWidth="304.0">
+               <children>
+                  <JFXTextField fx:id="txt_contrasena" focusColor="#009688" labelFloat="true" layoutX="51.0" layoutY="103.0" prefHeight="31.0" prefWidth="202.0" promptText="CONTRASEÑA" />
+                  <JFXTextField fx:id="txt_usuario" focusColor="#009688" labelFloat="true" layoutX="51.0" layoutY="37.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="202.0" promptText="USUARIO" />
+                  <JFXButton fx:id="btn_login" buttonType="RAISED" layoutX="70.0" layoutY="164.0" onAction="#iniciarSesion" prefHeight="31.0" prefWidth="165.0" ripplerFill="#008f817d" style="-fx-background-color: #009688;" text="INGRESAR" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <Text fx:id="lb_olvido_contra" layoutX="14.0" layoutY="219.0" onDragDetected="#olvidoContrasena" strokeType="OUTSIDE" strokeWidth="0.0" text="Olvido Contraseña" />
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="71.0">
+               <children>
+                  <AnchorPane prefHeight="14.0" prefWidth="304.0" style="-fx-background-color: #E0F2F1;" />
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <AnchorPane prefHeight="78.0" prefWidth="306.0" style="-fx-background-color: #009688;">
+                     <effect>
+                        <DropShadow color="#000000fe" />
+                     </effect>
+                     <children>
+                        <Text fill="#dff0ef" fontSmoothingType="LCD" layoutX="65.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO DE SESION" textAlignment="CENTER" wrappingWidth="173.13671875">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="HARD_LIGHT" opacity="0.29">
+                                 <topInput>
+                                    <Shadow blurType="TWO_PASS_BOX" color="WHITE" />
+                                 </topInput>
+                              </Blend>
+                           </effect>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+         <effect>
+            <DropShadow color="#000000af" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

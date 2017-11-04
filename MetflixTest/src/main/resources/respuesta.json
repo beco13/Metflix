@@ -1,0 +1,109 @@
+{
+    "RESPUESTA": [
+      {
+        "id": 1,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-03-07",
+        "empleado_id": 1,
+        "tiquet_id": 1
+      },
+      {
+        "id": 2,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2016-01-29",
+        "empleado_id": 2,
+        "tiquet_id": 2
+      },
+      {
+        "id": 3,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2017-07-28",
+        "empleado_id": 3,
+        "tiquet_id": 3
+      },
+      {
+        "id": 4,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-11-14",
+        "empleado_id": 4,
+        "tiquet_id": 4
+      },
+      {
+        "id": 5,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-08-06",
+        "empleado_id": 5,
+        "tiquet_id": 5
+      },
+      {
+        "id": 6,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2016-08-11",
+        "empleado_id": 6,
+        "tiquet_id": 6
+      },
+      {
+        "id": 7,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-08-27",
+        "empleado_id": 7,
+        "tiquet_id": 7
+      },
+      {
+        "id": 8,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2014-06-25",
+        "empleado_id": 8,
+        "tiquet_id": 8
+      },
+      {
+        "id": 9,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2016-11-04",
+        "empleado_id": 9,
+        "tiquet_id": 9
+      },
+      {
+        "id": 10,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-06-21",
+        "empleado_id": 10,
+        "tiquet_id": 10
+      },
+      {
+        "id": 11,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2017-07-10",
+        "empleado_id": 11,
+        "tiquet_id": 11
+      },
+      {
+        "id": 12,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2016-05-30",
+        "empleado_id": 12,
+        "tiquet_id": 12
+      },
+      {
+        "id": 13,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2017-07-12",
+        "empleado_id": 13,
+        "tiquet_id": 13
+      },
+      {
+        "id": 14,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-06-11",
+        "empleado_id": 14,
+        "tiquet_id": 14
+      },
+      {
+        "id": 15,
+        "descripcion": "Consequat ipsum labore laboris mollit id Lorem adipisicing consectetur tempor ullamco aliqua.",
+        "fecha": "2015-11-10",
+        "empleado_id": 15,
+        "tiquet_id": 15
+      }
+    ]
+  }

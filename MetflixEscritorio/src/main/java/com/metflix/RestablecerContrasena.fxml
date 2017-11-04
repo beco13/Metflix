@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.metflix.RestablecerContrasenaController">
+   <children>
+      <Pane prefHeight="58.0" prefWidth="442.0" style="-fx-background-color: #009688;">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restablecer Contraseña">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <JFXTextField fx:id="txt_correo_restablecer" focusColor="#009688" labelFloat="true" layoutX="82.0" layoutY="104.0" prefHeight="25.0" prefWidth="279.0" promptText="Correo" />
+      <JFXButton fx:id="btn_restablecer_contra" buttonType="RAISED" layoutX="341.0" layoutY="157.0" onAction="#restablecerContra" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: #009688;" text="Enviar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

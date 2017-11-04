@@ -1,0 +1,64 @@
+{
+    "PELICULA_VENTA": [
+      {
+        "peliculas_id": 1,
+        "ventas_id": 1
+      },
+      {
+        "peliculas_id": 2,
+        "ventas_id": 2
+      },
+      {
+        "peliculas_id": 3,
+        "ventas_id": 3
+      },
+      {
+        "peliculas_id": 4,
+        "ventas_id": 4
+      },
+      {
+        "peliculas_id": 5,
+        "ventas_id": 5
+      },
+      {
+        "peliculas_id": 6,
+        "ventas_id": 6
+      },
+      {
+        "peliculas_id": 7,
+        "ventas_id": 7
+      },
+      {
+        "peliculas_id": 8,
+        "ventas_id": 8
+      },
+      {
+        "peliculas_id": 9,
+        "ventas_id": 9
+      },
+      {
+        "peliculas_id": 10,
+        "ventas_id": 10
+      },
+      {
+        "peliculas_id": 11,
+        "ventas_id": 11
+      },
+      {
+        "peliculas_id": 12,
+        "ventas_id": 12
+      },
+      {
+        "peliculas_id": 13,
+        "ventas_id": 13
+      },
+      {
+        "peliculas_id": 14,
+        "ventas_id": 14
+      },
+      {
+        "peliculas_id": 15,
+        "ventas_id": 15
+      }
+    ]
+  }

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="586.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.metflix.EscritorioAdministradorController">
+   <children>
+      <Pane prefHeight="92.0" prefWidth="849.0" style="-fx-background-color: #009688;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <JFXTabPane layoutX="15.0" layoutY="74.0" prefHeight="478.0" prefWidth="819.0">
+         <tabs>
+            <Tab id="tab_admin_empleado" style="-fx-background-color:: #009688;" text="EMPLEADOS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tbl_empleados" layoutX="19.0" layoutY="75.0" prefHeight="346.0" prefWidth="781.0">
+                          <columns>
+                              <TableColumn fx:id="col_empleado_id" prefWidth="50.0" text="ID" />
+                            <TableColumn fx:id="col_empleado_identificacion" minWidth="0.0" prefWidth="122.0" text="IDENTIFICACION" />
+                              <TableColumn fx:id="col_empleado_nombre" prefWidth="186.0" text="NOMBRE" />
+                              <TableColumn fx:id="col_empleado_apellido" prefWidth="148.0" text="APELLIDO" />
+                            <TableColumn fx:id="col_empleado_correo" prefWidth="274.0" text="CORREO" />
+                          </columns>
+                        </TableView>
+                        <JFXButton fx:id="btn_empleados_agregar" buttonType="RAISED" layoutX="19.0" layoutY="27.0" onAction="#agregarEmpleados" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #009688;" text="AGREGAR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></JFXButton>
+                        <JFXButton fx:id="btn_buscar_epleado" buttonType="RAISED" layoutX="725.0" layoutY="24.0" onAction="#buscarEmpleado" prefHeight="34.0" prefWidth="81.0" style="-fx-background-color: #009688;" text="BUSCAR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></JFXButton>
+                        <JFXTextField fx:id="txt_empleado_buscar" focusColor="#009688" labelFloat="true" layoutX="525.0" layoutY="29.0"  prefHeight="25.0" prefWidth="185.0" promptText="EMPLEADO..." />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab id="tab_admin_peliculas" text="PELICULAS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView id="tbl_admin_peliculas" fx:id="tbl_peliculas" layoutX="14.0" layoutY="85.0" prefHeight="338.0" prefWidth="787.0">
+                          <columns>
+                            <TableColumn id="tbl_col_peluculas" fx:id="col_pelicula_id" prefWidth="51.0" text="ID" />
+                              <TableColumn fx:id="col_pelicula_titulo" prefWidth="215.0" text="TITULO" />
+                              <TableColumn fx:id="col_pelicula_idioma" minWidth="0.0" prefWidth="125.0" text="IDIOMA" />
+                            <TableColumn fx:id="col_pelicula_clasificacion" prefWidth="118.0" text="CLASIFICACION" />
+                              <TableColumn fx:id="col_pelicula_director" prefWidth="146.0" text="DIRECTOR" />
+                              <TableColumn fx:id="col_pelicula_fecha" prefWidth="131.0" text="FECHA ESTRENO" />
+                          </columns>
+                        </TableView>
+                        <JFXButton fx:id="btn_peliculas_agregar" buttonType="RAISED" layoutX="14.0" layoutY="29.0" onAction="#agregarPelicula" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: #009688;" text="AGREGAR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></JFXButton>
+                        <JFXButton fx:id="btn_pelicula_buscar" buttonType="RAISED" layoutX="722.0" layoutY="29.0" onAction="#buscarPelicula" style="-fx-background-color: #009688;" text="BUSCAR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></JFXButton>
+                        <JFXTextField fx:id="txt_peliculas_buscar" focusColor="#009688" labelFloat="true" layoutX="523.0" layoutY="32.0" prefHeight="25.0" prefWidth="182.0" promptText="PELICULA..." />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab id="tab_admin_inicio" text="CALIFICACIÓN PELICULAS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tbl_calificacion_pelicula" layoutX="22.0" layoutY="89.0" prefHeight="332.0" prefWidth="776.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="ID" />
+                            <TableColumn prefWidth="395.0" text="PELICULA" />
+                              <TableColumn prefWidth="305.0" text="CALIFICACION" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField fx:id="txt_buscar_calificacion" focusColor="#009688" layoutX="505.0" layoutY="30.0" prefHeight="25.0" prefWidth="186.0" promptText="Calificación" />
+                        <JFXButton fx:id="btn_buscar_calificacion_pelicula" buttonType="RAISED" layoutX="715.0" layoutY="26.0" onAction="#buscarCalificacion" prefHeight="33.0" prefWidth="83.0" style="-fx-background-color: #009688;" text="BUSCAR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab id="tab_admin_ventas" text="VENTAS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="878.0">
+                     <children>
+                        <JFXButton fx:id="btn_ventas_buscar" layoutX="437.0" layoutY="31.0" onAction="#buscarVentas" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #009688;" text="Buscar" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></JFXButton>
+                        <TableView id="tbl_admin_peliculas" fx:id="tbl_ventas" layoutX="16.0" layoutY="85.0" prefHeight="338.0" prefWidth="787.0">
+                           <columns>
+                              <TableColumn id="tbl_col_peluculas_venta" prefWidth="56.0" text="ID" />
+                              <TableColumn id="tbl_col_ventas_titulo" prefWidth="448.0" text="TITULO" />
+                              <TableColumn id="tbl_col_ventas_cant" minWidth="0.0" prefWidth="108.0" text="CANTIDAD" />
+                              <TableColumn id="tbl_col_ventas_fch" prefWidth="174.0" text="FECHA" />
+                           </columns>
+                        </TableView>
+                        <DatePicker fx:id="dp_venta_inicio" layoutX="24.0" layoutY="31.0" promptText="Fecha Inicio" />
+                        <DatePicker fx:id="dp_venta_fin" layoutX="225.0" layoutY="31.0" promptText="Fecha Fin" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
