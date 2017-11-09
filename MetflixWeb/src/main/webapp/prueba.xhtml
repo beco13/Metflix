@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+
+<title>Insert title here</title>
+</head>
+<body>
+	
+		<h:form>
+			<h:inputText value="#{empleadoBean.identificacion}" />
+			<h:inputText value="#{empleado.nombre}" />
+			<h:commandButton type="submit" action="#{empleadoBean.registrarEmpleado}" />
+		</h:form>
+
+<!--  
+<form jsf:id="formEmpleado">
+		<label for="nombreEmpleado">Nombre:</label> &#160; &#160; &#160;&#160;
+		&#160;<input id="nombreEmpleado" type="text" required="required"
+			jsf:value="#{empleadoBean.nombre}" /> <br /> <br /> <label
+			for="apellidoEmpleado">Apellido:</label> &#160; &#160; &#160; &#160;
+		<input id="apellidoEmpleado" type="text" required="required"
+			jsf:value="#{empleadoBean.apellido}" /> <br /> <br /> <label
+			for="identificacionEmpleado">Identificacion:</label> &#160; &#160;
+		&#160; <input id="identificacionEmpleado" type="text"
+			required="required" jsf:value="#{empleadoBean.identificacion}" /> <br />
+		<br /> <label for="contrasenaEmpleado">Contraseña:</label> &#160;
+		&#160; <input id="contrasenaEmpleado" type="text" required="required"
+			jsf:value="#{empleadoBean.contrasena}" /> <br /> <br /> <label
+			for="correoEmpleado">Correo:</label> &#160; &#160; &#160; &#160;
+		&#160; <input id="correoEmpleado" type="text" required="required"
+			jsf:value="#{empleadoBean.correo}" /> <br /> <br /> <input
+			type="submit" jsf:action="#{empleadoBean.registrarEmpleado}"
+			value="Registrar" />
+	</form>
+	-->
+</body>
+</html>

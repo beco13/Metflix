@@ -6,26 +6,41 @@
 		<artifactId>MetflixProyecto</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>MetflixEAR</artifactId>
-	<packaging>ear</packaging>
-	<name>MetflixEAR</name>
+	<artifactId>MetflixWeb</artifactId>
+	<packaging>war</packaging>
+	<name>Pagina web</name>
+	<description>pagina web del metflix</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.metflix</groupId>
-			<artifactId>MetflixNegocio</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb</type>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.13</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.metflix</groupId>
 			<artifactId>MetflixPersistence</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.metflix</groupId>
-			<artifactId>MetflixWeb</artifactId>
+			<artifactId>MetflixNegocio</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<type>war</type>
+			<type>ejb</type>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

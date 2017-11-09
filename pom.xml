@@ -65,5 +65,6 @@
 		<module>MetflixTest</module>
 		<module>MetflixEscritorio</module>
 		<module>MetflixNegocio</module>
+		<module>MetflixWeb</module>
 	</modules>
 </project>
