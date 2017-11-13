@@ -12,6 +12,8 @@ import javax.persistence.*;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+//@Inheritance(strategy=InheritanceType.JOINED)
+
 @MappedSuperclass
 @NamedQueries({
 	@NamedQuery(name = Persona.FIND_BY_ID, query = "select persona from Persona persona where persona.id = :id" ),

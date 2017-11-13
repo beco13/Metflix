@@ -72,7 +72,7 @@ public class PeliculaTest {
 		List<Genero> generos =  new  ArrayList<Genero>();
 		generos.add(genero);
 		
-		pelicula.setGenero(genero);
+		//pelicula.setGenero(genero);
 		
 		CalificacionesPelicula calificacion = entityManager.find(CalificacionesPelicula.class, 1);		
 		List<CalificacionesPelicula> calificaciones = new ArrayList<CalificacionesPelicula>();
