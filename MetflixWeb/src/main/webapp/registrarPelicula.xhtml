@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
-<meta charset="UTF-8" />
-<title>Insert title here</title>
+
+<title>Registrar Pelicula</title>
 </head>
 <body>
 	<form jsf:id="formPelicula">
 	
-		<!-- <label for="nombreEmpleado">Nombre:</label> 
-		<input required="required" id="nombreEmpleado" type="text" jsf:value="#{empleadoBean.nombre}" /> 
+		<label for="calificacionPelicula">Calificacion:</label> 
+		<input required="required" id="calificacionPelicula" type="number" jsf:value="#{peliculaBean.calificacion}" /> 
 		<br/>
-		<label for="apellidoEmpleado">Apellido:</label> 
-		<input required="required" id="apellidoEmpleado" type="text" jsf:value="#{empleadoBean.apellido}" /> 
+		<label for="clasificacionPelicula">Clasificacion:</label> 
+		<input required="required" id="clasificacionPelicula" type="text" jsf:value="#{peliculaBean.clasificacion}" /> 
 		<br/>
-		<label for="identificacionEmpleado">Identificacion:</label> 
-		<input required="required" id="identificacionEmpleado" type="number" jsf:value="#{empleadoBean.identificacion}" />
+		<label for="directorPelicula">Director:</label> 
+		<input required="required" id="directorPelicula" type="text" jsf:value="#{peliculaBean.director}" />
 		<br/>
-		<label for="correoEmpleado">Correo:</label> 
-		<input required="required" id="correoEmpleado" type="email" jsf:value="#{empleadoBean.correo}" />
+		<label for="fecha_estrenoPelicula">fecha_Estreno:</label>
+		<h:inputText id="fecha_estreno" value="#{peliculaBean.fecha_estreno}" required="true">
+			<f:convertDateTime pattern="dd/mm/yyyy"></f:convertDateTime>
+		</h:inputText> 
 		<br/>
-		<label for="contrasenaEmpleado">Contrasena:</label> 
-		<input required="required" id="contrasenaEmpleado" type="password" jsf:value="#{empleadoBean.contrasena}" />
+		<label for="idiomaPelicula">Idioma:</label> 
+		<input required="required" id="idiomaPelicula" type="text" jsf:value="#{peliculaBean.idioma}" />
 		<br/>
-		<input type="submit" jsf:action="#{empleadoBean.registrarEmpleado}" value="Aceptar" />-->
+		<label for="paisPelicula">Pais:</label> 
+		<input required="required" id="paisPelicula" type="text" jsf:value="#{peliculaBean.pais}" />
+		<br/>
+		<label for="repartoPelicula">Reparto:</label> 
+		<input required="required" id="repartoPelicula" type="text" jsf:value="#{peliculaBean.reparto}" />
+		<br/>
+		<label for="sinopsisPelicula">Sinopsis:</label> 
+		<input required="required" id="sinopsisPelicula" type="text" jsf:value="#{peliculaBean.sinopsis}" />
+		<br/>
+		<label for="tituloPelicula">Titulo:</label> 
+		<input required="required" id="tituloPelicula" type="text" jsf:value="#{peliculaBean.titulo}" />
+		<br/>
+		
+		<label for="generoPelicula">Genero:</label> 
+		<input required="required" id="generoPelicula" type="text" jsf:value="#{peliculaBean.genero}" />
+		<br/>
+		<input type="submit" jsf:action="#{peliculaBean.registrarPelicula}" value="Aceptar" />
 	</form>
+	<h:messages/>
+	
 </body>
 </html>

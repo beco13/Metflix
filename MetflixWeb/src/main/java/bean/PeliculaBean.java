@@ -27,34 +27,115 @@ public class PeliculaBean {
 	private String reparto;
 	private String sinopsis;
 	private String titulo;
-	private int genero_id;
-	
-	public List<Genero> generos(){
+	private String genero;
+/*
+	public List<Genero> generos() {
 		return administradorEJB.consultarGeneros();
-	}
-	
+	}*/
+
 	public void registrarPelicula() {
-		try{
-			Pelicula pelicula = (Pelicula) administradorEJB
-					.registrarPelicula(
-							titulo,
-							calificacion,
-							clasificacion,
-							director,
-							fecha_estreno,
-							genero_id,
-							idioma,
-							pais,
-							reparto,
-							sinopsis);
+		try {
+			Pelicula pelicula = (Pelicula) administradorEJB.registrarPelicula(titulo, calificacion, clasificacion,
+					director, fecha_estreno, genero, idioma, pais, reparto, sinopsis);
 			
+
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro exitoso",
 					"Registro exitoso" + pelicula.toString());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-		}catch (Exception e) {
+		} catch (Exception e) {
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), e.getMessage());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
 		}
-		
+
 	}
+
+	public AdministradorEJB getAdministradorEJB() {
+		return administradorEJB;
+	}
+
+	public void setAdministradorEJB(AdministradorEJB administradorEJB) {
+		this.administradorEJB = administradorEJB;
+	}
+
+	public double getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(double calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public String getClasificacion() {
+		return clasificacion;
+	}
+
+	public void setClasificacion(String clasificacion) {
+		this.clasificacion = clasificacion;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public Date getFecha_estreno() {
+		return fecha_estreno;
+	}
+
+	public void setFecha_estreno(Date fecha_estreno) {
+		this.fecha_estreno = fecha_estreno;
+	}
+
+	public String getIdioma() {
+		return idioma;
+	}
+
+	public void setIdioma(String idioma) {
+		this.idioma = idioma;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public String getReparto() {
+		return reparto;
+	}
+
+	public void setReparto(String reparto) {
+		this.reparto = reparto;
+	}
+
+	public String getSinopsis() {
+		return sinopsis;
+	}
+
+	public void setSinopsis(String sinopsis) {
+		this.sinopsis = sinopsis;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
 }

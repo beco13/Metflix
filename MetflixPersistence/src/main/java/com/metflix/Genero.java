@@ -21,7 +21,7 @@ import javax.persistence.*;
 
 public class Genero implements Serializable {
 
-	@OneToMany(mappedBy="genero")
+	//@OneToMany(mappedBy="genero")
 	private List<Pelicula> peliculas;   
 	
 	@Id

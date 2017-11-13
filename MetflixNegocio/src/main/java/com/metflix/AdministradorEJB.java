@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+
 /**
  * Session Bean implementation class AdministradorEJB
  */
@@ -18,6 +19,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 
 	@PersistenceContext
 	private EntityManager em;
+	
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -147,27 +149,32 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 * @param sinopsis
 	 */
 	public Pelicula registrarPelicula(String titulo, Double calificacion, String clasificacion, String director,
-			Date fechaEstreno, int genero_id, String idioma, String pais, String reparto, String sinopsis) {
+			Date fechaEstreno, String genero, String idioma, String pais, String reparto, String sinopsis) {
+		
+		Pelicula pelicula= null;
 
-		Genero tmpGenero = buscarGeneroPorId(genero_id);
+			pelicula = new Pelicula();
+			pelicula.setTitulo(titulo);
+			pelicula.setCalificacion(calificacion);
+			pelicula.setClasificacion(clasificacion);
+			pelicula.setDirector(director);
+			pelicula.setFechaEstreno(new Date());
+			pelicula.setGenero(genero);
+			pelicula.setIdioma(idioma);
+			pelicula.setPais(pais);
+			pelicula.setReparto(reparto);
+			pelicula.setSinopsis(sinopsis);
 
-		Pelicula pelicula = new Pelicula();
-		pelicula.setTitulo(titulo);
-		pelicula.setCalificacion(calificacion);
-		pelicula.setClasificacion(clasificacion);
-		pelicula.setDirector(director);
-		pelicula.setFechaEstreno(new Date());
-		pelicula.setGenero(tmpGenero);
-		pelicula.setIdioma(idioma);
-		pelicula.setPais(pais);
-		pelicula.setReparto(reparto);
-		pelicula.setSinopsis(sinopsis);
+			// guardamos el registro
+			em.persist(pelicula);
+			em.flush();
 
-		// guardamos el registro
-		em.persist(pelicula);
-		em.flush();
-
+			
+		
+		
+		//Genero tmpGenero = buscarGeneroPorId(genero);
 		return pelicula;
+	
 	}
 
 	/**
@@ -228,7 +235,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		pelicula.setClasificacion(clasificacion);
 		pelicula.setDirector(director);
 		pelicula.setFechaEstreno(new Date());
-		pelicula.setGenero(tmpGenero);
+		//pelicula.setGenero(genero);
 		pelicula.setIdioma(idioma);
 		pelicula.setPais(pais);
 		pelicula.setReparto(reparto);
@@ -244,8 +251,9 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 * 
 	 * @param id
 	 *            integer
-	 */
-	public void eliminarPelicula(Integer id) {
+	 */ 
+	public void eliminarPelicula(Integer id) 
+	{
 
 		Pelicula tmpPelicula = buscarPeliculaPorId(id);
 
@@ -269,6 +277,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		Empleado empleado = new Empleado();
 		empleado.setIdentificacion(identificacion);
 		empleado.setNombre(nombre);
+		
 		empleado.setApellido(apellido);
 		empleado.setCorreo(correo);
 		empleado.setContrasena(contrasena);
@@ -421,5 +430,14 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 
 		return tmpCorreo.enviar() ? 1 : 0;
 	}
+
+	@Override
+	public Pelicula registrarPelicula(String titulo, Double calificacion, String clasificacion, String director,
+			Date fechaEstreno, int genero_id, String idioma, String pais, String reparto, String sinopsis) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }
