@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
@@ -7,14 +12,14 @@
 <body>
 
  	<h1>
- 	
- 		Lorena
+ 		#{translator['label.saludo']}
  	</h1>
  	
  	<STRONG>
- 	 	#{IndexBean.mensaje}
+ 	 	#{indexBean.mensaje}
  	</STRONG>
-
-
+ 	
+ 	<button type="button" jsf:action="#{indexBean.cambiarIdioma}">Cambiar Idioma</button>
+ 	
 </body>
 </html>

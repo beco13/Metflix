@@ -5,11 +5,18 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+
+import java.util.Locale;
 import java.util.Properties;
 
 @ManagedBean
 public class IndexBean {
 
+	public void cambiarIdioma() {
+		FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("en"));
+	}
+	
 	public String getMensaje()
 	{
 		String mensaje = "no cargado--";
