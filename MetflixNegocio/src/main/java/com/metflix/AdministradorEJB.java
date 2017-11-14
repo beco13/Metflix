@@ -207,6 +207,20 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		query.setParameter("id", pelicula_id);
 		return (Pelicula) query.getSingleResult();
 	}
+	
+	/**
+	 * metodo que permite buscar una pelicula por el titulo
+	 * 
+	 * @param titulo
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Pelicula> buscarPeliculaPorTitulo(String titulo) {
+		Query query = em.createNamedQuery(Pelicula.FIND_BY_TITULO);
+		query.setParameter("titulo", titulo);
+		return Collections.checkedList(query.getResultList(), Pelicula.class);
+	}
+	
 
 	/**
 	 * permite actualizar la informacion de una pelicula

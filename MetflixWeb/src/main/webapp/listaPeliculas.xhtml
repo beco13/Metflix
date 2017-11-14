@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+
+<title>Lista de Peliculas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+	integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+	integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-md-6">
+				<form jsf:id="formPelicula">				
+					<label for="ListaPeliculafiltro">filtro:</label> 
+					<input required="required" id="ListaPeliculafiltro"  type="text" jsf:value="#{ListaPeliculaBean.filtro}" />
+					<br/>
+					<input type="submit" class="btn btn-info"  jsf:action="#{listaPeliculasBean.buscarPeliculas}" value="Buscar" />
+				</form>
+			</div>
+			<div class="col-md-6">
+				<form jsf:id="ListarTodasLasPeliculas">
+			 		<input type="submit" class="btn btn-success" jsf:action="#{listaPeliculasBean.listarPeliculas}" value="Mostrar todos los registros" />
+			 	</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Titulo</th>
+							<th scope="col">Sinopsis</th>
+							<th scope="col">Fecha estreno</th>
+							<th scope="col">Pais</th>
+							<th scope="col">Reparto</th>
+							<th scope="col">Director</th>
+							<th scope="col">Idioma</th>
+							<th scope="col">Clasificación</th>
+							<th scope="col">Calificación</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<ui:repeat var="tmpPelicula" varStatus="status" value="#{peliculas}">  
+								 
+							<tr>
+								<td>
+									#{tmpPelicula.id}
+								</td>
+								<td col="9">
+									#{tmpPelicula.titulo}
+								</td>
+							</tr>
+						</ui:repeat>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

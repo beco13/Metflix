@@ -14,7 +14,14 @@ import java.util.Properties;
 public class IndexBean {
 
 	public void cambiarIdioma() {
-		FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("en"));
+		
+		if(FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage() == "es") {
+			FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("en"));
+		}
+		else{
+			FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("es"));
+		}
+		
 	}
 	
 	public String getMensaje()

@@ -10,16 +10,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
  	<h1>
- 		#{translator['label.saludo']}
+ 		#{translator['pelicula.titulo']}
  	</h1>
  	
  	<STRONG>
  	 	#{indexBean.mensaje}
  	</STRONG>
  	
- 	<button type="button" jsf:action="#{indexBean.cambiarIdioma}">Cambiar Idioma</button>
+ 	<form jsf:id="formCambioIdioma">
+ 	<input type="submit" class="btn btn-success" jsf:action="#{indexBean.cambiarIdioma}" value="cambiarIdioma" />
+ 	</form>
+ 	
  	
 </body>
 </html>

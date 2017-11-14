@@ -33,7 +33,7 @@ public class PeliculaBean {
 		return administradorEJB.consultarGeneros();
 	}*/
 
-	public void registrarPelicula() {
+	public String registrarPelicula() {
 		try {
 			Pelicula pelicula = (Pelicula) administradorEJB.registrarPelicula(titulo, calificacion, clasificacion,
 					director, fecha_estreno, genero, idioma, pais, reparto, sinopsis);
@@ -42,11 +42,12 @@ public class PeliculaBean {
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro exitoso",
 					"Registro exitoso" + pelicula.toString());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+			return "detallesPelicula";
 		} catch (Exception e) {
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), e.getMessage());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
 		}
-
+		return null;
 	}
 
 	public AdministradorEJB getAdministradorEJB() {
