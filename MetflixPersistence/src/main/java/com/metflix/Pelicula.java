@@ -17,7 +17,7 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = Pelicula.FIND_BY_ID, query = "select pelicula from Pelicula pelicula where pelicula.id = :id" ),
-	@NamedQuery(name = Pelicula.FIND_BY_TITULO, query = "select pelicula from Pelicula pelicula where pelicula.titulo like '%:titulo%'" ),
+	@NamedQuery(name = Pelicula.FIND_BY_TITULO, query = "select pelicula from Pelicula pelicula where pelicula.titulo like :titulo" ),
 	@NamedQuery(name = Pelicula.GET_ALL, query = "select pelicula from Pelicula pelicula" ),
 	@NamedQuery(name = Pelicula.GET_BY_CALIFICACION, query = "select pelicula from Pelicula pelicula where pelicula.calificacion = :calificacion" )
 })

@@ -10,55 +10,227 @@
 <title>Registrar Pelicula</title>
 
 <!-- Required meta tags -->
-   <meta charset="utf-8" />
-    <meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+	integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+	integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	crossorigin="anonymous"></script>
 
 </head>
 <body>
-	<form jsf:id="formPelicula">
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Metflix</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
+				<li class="nav-item ">
+					<h:link class="nav-link" outcome="index">
+						#{translator['menu.inicio']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="listaPeliculas">
+						#{translator['menu.peliculas']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.clientes']}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.empleados']}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.ventas']}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.cerrarSesion']}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	
-		<label for="calificacionPelicula">Calificacion:</label> 
-		<input required="required" id="calificacionPelicula"  type="number" jsf:value="#{peliculaBean.calificacion}" /> 
-		<br/>
-		<label for="clasificacionPelicula">Clasificacion:</label> 
-		<input required="required" id="clasificacionPelicula"  type="text" jsf:value="#{peliculaBean.clasificacion}" /> 
-		<br/>
-		<label for="directorPelicula">Director:</label> 
-		<input required="required" id="directorPelicula"  type="text" jsf:value="#{peliculaBean.director}" />
-		<br/>
-		<label for="fecha_estrenoPelicula">fecha_Estreno:</label>
-		<h:inputText id="fecha_estreno" required="required" value="#{peliculaBean.fecha_estreno}" >
-			<f:convertDateTime pattern="yyyy-mm-dd"></f:convertDateTime>
-		</h:inputText> 
-		<br/>
-		<label for="idiomaPelicula">Idioma:</label> 
-		<input required="required" id="idiomaPelicula"  type="text" jsf:value="#{peliculaBean.idioma}" />
-		<br/>
-		<label for="paisPelicula">Pais:</label> 
-		<input required="required" id="paisPelicula"  type="text" jsf:value="#{peliculaBean.pais}" />
-		<br/>
-		<label for="repartoPelicula">Reparto:</label> 
-		<input required="required" id="repartoPelicula"  type="text" jsf:value="#{peliculaBean.reparto}" />
-		<br/>
-		<label for="sinopsisPelicula">Sinopsis:</label> 
-		<input required="required" id="sinopsisPelicula"  type="text" jsf:value="#{peliculaBean.sinopsis}" />
-		<br/>
-		<label for="tituloPelicula">Titulo:</label> 
-		<input required="required" id="tituloPelicula"  type="text" jsf:value="#{peliculaBean.titulo}" />
-		<br/>
-		
-		<label for="generoPelicula">Genero:</label> 
-		<input required="required" id="generoPelicula"  type="text" jsf:value="#{peliculaBean.genero}" />
-		<br/>
-		<input type="submit" class="btn btn-success"  jsf:action="#{peliculaBean.registrarPelicula}" value="Aceptar" />
-	</form>
-	<h:messages/>
+	<form jsf:id="formCambioIdioma">
+ 		<button type="submit" class="btn btn-success" jsf:action="#{indexBean.cambiarIdioma}">
+ 			#{translator['label.cambiarIdioma']}
+ 		</button>
+ 	</form>
+ 	
 	
+	<BR />
+	<BR />
+
+
+				<form jsf:id="formPelicula">
+								
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 ">
+				
+											
+								<div class="form-group">
+										<label for="calificacionPelicula">#{translator['pelicula.calificacion']}:</label>
+										 <input
+											required="required" class="form-control" id="calificacionPelicula" type="number"
+											jsf:value="#{peliculaBean.calificacion}" />
+											<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+								<div class="form-group">
+										<label for="clasificacionPelicula">#{translator['pelicula.clasificacion']}:</label> 
+										<input class="form-control" required="required" id="clasificacionPelicula"  type="text" jsf:value="#{peliculaBean.clasificacion}" />
+											<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+								<div class="form-group">
+									<label for="directorPelicula">#{translator['pelicula.director']}:</label> 
+									<input class="form-control" required="required" id="directorPelicula"  type="text" jsf:value="#{peliculaBean.director}" />
+									
+										<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+								</div>
+								
+								<div class="form-group">
+									<label for="fecha_estrenoPelicula">#{translator['pelicula.fechaEstreno']}:</label>
+									<h:inputText id="fecha_estreno" class="form-control" required="required" value="#{peliculaBean.fecha_estreno}" >
+										<f:convertDateTime pattern="yyyy-mm-dd"></f:convertDateTime>
+									</h:inputText> 
+										<small
+											 class="form-text text-muted">
+											#{translator['registrarPelicula.infoFechaEstreno']}
+										</small>
+								</div>
+								
+								<div class="form-group">
+										<label for="idiomaPelicula">#{translator['pelicula.idioma']}:</label> 
+										<input class="form-control"
+											required="required" id="idiomaPelicula" type="text"
+											jsf:value="#{peliculaBean.idioma}" /> 
+											
+											<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+											
+				
+							</div>
+							<div class="col-md-6 ">
+				
+											
+								<div class="form-group">
+									<label
+										for="paisPelicula">#{translator['pelicula.pais']}:</label> <input required="required" class="form-control"
+										id="paisPelicula" type="text" jsf:value="#{peliculaBean.pais}" />
+										<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+								<div class="form-group">
+								
+									<label for="repartoPelicula">#{translator['pelicula.reparto']}:</label> 
+									<input class="form-control"
+									required="required" id="repartoPelicula" type="text"
+									jsf:value="#{peliculaBean.reparto}" /> 
+									<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+								<div class="form-group">
+									<label
+									for="sinopsisPelicula">#{translator['pelicula.sinopsis']}:</label>
+									<input class="form-control"
+									required="required" id="sinopsisPelicula" type="text"
+									jsf:value="#{peliculaBean.sinopsis}" /> 
+									<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+								<div class="form-group">
+									<label
+									for="tituloPelicula">#{translator['pelicula.titulo']}:</label> 
+									<input required="required" class="form-control"
+									id="tituloPelicula" type="text" jsf:value="#{peliculaBean.titulo}" />
+									<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+								<div class="form-group">
+									<label for="generoPelicula">#{translator['pelicula.genero']}:</label> <input class="form-control"
+										required="required" id="generoPelicula" type="text"
+										jsf:value="#{peliculaBean.genero}" /> 
+										<small
+												 class="form-text text-muted">
+												We'll never share your email with anyone else.
+											</small>
+								</div>
+								
+				
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+						
+						
+								<button 
+									type="submit" 
+									class="btn btn-success" 
+									jsf:action="#{peliculaBean.registrarPelicula}"
+									>
+						 			#{translator['label.guardar']}
+						 		</button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+				<h:messages />
+
 </body>
 </html>

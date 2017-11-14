@@ -217,7 +217,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	@SuppressWarnings("unchecked")
 	public List<Pelicula> buscarPeliculaPorTitulo(String titulo) {
 		Query query = em.createNamedQuery(Pelicula.FIND_BY_TITULO);
-		query.setParameter("titulo", titulo);
+		query.setParameter("titulo", "%"+titulo+"%");
 		return Collections.checkedList(query.getResultList(), Pelicula.class);
 	}
 	
@@ -308,7 +308,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 
 		if (entityManager.find(Empleado.class, identificacion) != null) {
 
-			System.out.println("El usuario ya está registrado");
+			System.out.println("El usuario ya estï¿½ registrado");
 
 		} else {
 			Empleado empleado = new Empleado();

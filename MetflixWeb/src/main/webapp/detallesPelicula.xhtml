@@ -8,69 +8,147 @@
 <head>
 
 <title>Detalles Pelicula</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+	integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+	integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	crossorigin="anonymous"></script>
 
 </head>
 <body>
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Metflix</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
+				<li class="nav-item ">
+					<h:link class="nav-link" outcome="index">
+						#{translator['menu.inicio']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="listaPeliculas">
+						#{translator['menu.peliculas']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.clientes']}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.empleados']}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.ventas']}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						#{translator['menu.cerrarSesion']}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	
-	<table class="table">
-  
-  <tbody>
-    <tr>
-      
-      <td>calificacion:</td>
-      <td>#{peliculaBean.calificacion}</td>
-    </tr>
-    <tr>
-            
-      <td>clasificacion:</td>
-      <td>#{peliculaBean.clasificacion}</td> 
-    </tr>
-    <tr>
-    
-      <td>director:</td>
-      <td>#{peliculaBean.director}</td>
-    </tr>
-    <tr>
-    
-      <td>fecha_estreno:</td>
-      <td>#{peliculaBean.fecha_estreno}</td>
-    </tr>
-    <tr>
-    
-      <td>idioma:</td>
-      <td>#{peliculaBean.idioma}</td>
-    </tr>
-    <tr>
-    
-      <td>pais:</td>
-      <td>#{peliculaBean.pais}</td>
-    </tr>
-    <tr>
-    
-      <td>reparto:</td>
-      <td>#{peliculaBean.reparto}</td>
-    </tr>
-    <tr>
-    
-      <td>sinopsis:</td>
-      <td>#{peliculaBean.sinopsis}</td>
-    </tr>
-    <tr>
-    
-      <td>titulo:</td>
-      <td>#{peliculaBean.titulo}</td>
-    </tr>
-    <tr>
-    
-      <td>genero:</td>
-      <td>#{peliculaBean.genero} </td>
-    </tr>
-    
-  </tbody>
-</table>
+	<form jsf:id="formCambioIdioma">
+ 		<button type="submit" class="btn btn-success" jsf:action="#{indexBean.cambiarIdioma}">
+ 			#{translator['label.cambiarIdioma']}
+ 		</button>
+ 	</form>
+ 	
+	
+	<BR />
+	<BR />
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<table class="table">
+
+					<tbody>
+						<tr>
+
+							<td>#{translator['pelicula.calificacion']}:</td>
+							<td>#{peliculaBean.calificacion}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.clasificacion']}:</td>
+							<td>#{peliculaBean.clasificacion}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.director']}:</td>
+							<td>#{peliculaBean.director}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.fechaEstreno']}:</td>
+							<td>#{peliculaBean.fecha_estreno}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.idioma']}:</td>
+							<td>#{peliculaBean.idioma}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.pais']}:</td>
+							<td>#{peliculaBean.pais}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.reparto']}:</td>
+							<td>#{peliculaBean.reparto}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.sinopsis']}:</td>
+							<td>#{peliculaBean.sinopsis}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.titulo']}:</td>
+							<td>#{peliculaBean.titulo}</td>
+						</tr>
+						<tr>
+
+							<td>#{translator['pelicula.genero']}:</td>
+							<td>#{peliculaBean.genero}</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

@@ -40,42 +40,46 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
-				<li class="nav-item active">
+				<li class="nav-item ">
+					<h:link class="nav-link" outcome="index">
+						#{translator['menu.inicio']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="listaPeliculas">
+						#{translator['menu.peliculas']}
+					</h:link>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="#">
-						Inicio
-						<span class="sr-only">
-						(current)
-						</span>
+						#{translator['menu.clientes']}
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">
-						Películas
+						#{translator['menu.empleados']}
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">
-						Clientes
+						#{translator['menu.ventas']}
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">
-						Empleados
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Ventas
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Cerrar Sesión
+						#{translator['menu.cerrarSesion']}
 					</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
+	
+	<form jsf:id="formCambioIdioma">
+ 		<button type="submit" class="btn btn-success" jsf:action="#{indexBean.cambiarIdioma}">
+ 			#{translator['label.cambiarIdioma']}
+ 		</button>
+ 	</form>
+ 	
 	
 	<BR />
 	<BR />
@@ -83,21 +87,44 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<form jsf:id="formPelicula">
-					<label for="ListaPeliculafiltro">filtro:</label> <input
-						required="required" id="ListaPeliculafiltro" type="text"
-						jsf:value="#{ListaPeliculaBean.filtro}" /> <br /> <input
-						type="submit" class="btn btn-info"
-						jsf:action="#{listaPeliculasBean.buscarPeliculas}" value="Buscar" />
+						<div class="form-group">
+							<label for="ListaPeliculafiltro">
+								#{translator['listaPeliculas.filtro']}:
+							</label> 
+							<input
+								required="required" id="ListaPeliculafiltro" type="text" class="form-control"
+								jsf:value="#{listaPeliculasBean.filtro}" /> 
+								<small
+									 class="form-text text-muted">
+									#{translator['listaPeliculas.descripcionFiltro']}
+								</small>
+						</div>
+						 <button 
+						 	type="submit" 
+							class="btn btn-info"
+							jsf:action="#{listaPeliculasBean.buscarPeliculas}"
+						 		>
+				 			#{translator['listaPeliculas.buscarRegistros']}
+				 		</button>
 				</form>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<form jsf:id="ListarTodasLasPeliculas">
-					<input type="submit" class="btn btn-success"
+					<button 
+					 	type="submit" 
+						class="btn btn-success"
 						jsf:action="#{listaPeliculasBean.listarPeliculas}"
-						value="Mostrar todos los registros" />
+					 		>
+			 			#{translator['listaPeliculas.mostrarRegistros']}
+			 			
+			 		</button>
+						<h:link class="btn btn-primary" outcome="registrarPelicula">
+							#{translator['listaPeliculas.registrarPelicula']}
+						</h:link>
 				</form>
+				
 			</div>
 		</div>
 		
@@ -110,13 +137,28 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>Titulo</th>
-							<th>Fecha estreno</th>
-							<th>Pais</th>
-							<th>Idioma</th>
-							<th>Clasificación</th>
-							<th>Calificación</th>
-							<th>Opciones</th>
+							<th>
+								#{translator['pelicula.titulo']}
+							</th>
+							<th>
+								#{translator['pelicula.fechaEstreno']}
+							</th>
+							<th>
+								#{translator['pelicula.pais']}
+							</th>
+							<th>
+								#{translator['pelicula.idioma']}
+							</th>
+							<th>
+								#{translator['pelicula.clasificacion']}
+							</th>
+							<th>
+								#{translator['pelicula.calificacion']}
+							</th>
+							<th>
+								#{translator['generalTabla.opciones']}
+							</th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -132,7 +174,9 @@
 								<td>#{pelicula.idioma}</td>
 								<td>#{pelicula.clasificacion}</td>
 								<td>#{pelicula.calificacion}</td>
-								<td></td>
+								<td>
+								
+								</td>
 							</tr>
 						</ui:repeat>
 

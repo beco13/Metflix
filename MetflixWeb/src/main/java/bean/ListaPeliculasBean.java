@@ -2,6 +2,7 @@ package bean;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
@@ -16,7 +17,7 @@ public class ListaPeliculasBean
 	private List<Pelicula> peliculas;
 	private String filtro;
 	
-	
+	@PostConstruct
 	public void listarPeliculas()
 	{
 		peliculas = administradorEJB.consultarPeliculas();
@@ -27,8 +28,6 @@ public class ListaPeliculasBean
 	{
 		peliculas = administradorEJB.buscarPeliculaPorTitulo(filtro);
 	}
-
-	
 	
 	
 	public List<Pelicula> getPeliculas() {
