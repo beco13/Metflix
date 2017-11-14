@@ -9,25 +9,45 @@ import com.metflix.AdministradorEJB;
 import com.metflix.Pelicula;
 
 @ManagedBean
-
 public class ListaPeliculasBean 
 {
 	@EJB
 	private AdministradorEJB administradorEJB;
-	List<Pelicula> peliculas;
-	String filtro;
+	private List<Pelicula> peliculas;
+	private String filtro;
 	
 	
 	public void listarPeliculas()
 	{
 		peliculas = administradorEJB.consultarPeliculas();
-		System.out.println(peliculas.toString());
+		System.out.println("Mostrando peliculas: "+peliculas.toString());
 	}
 	
 	public void buscarPeliculas()
 	{
 		peliculas = administradorEJB.buscarPeliculaPorTitulo(filtro);
 	}
+
+	
+	
+	
+	public List<Pelicula> getPeliculas() {
+		return peliculas;
+	}
+
+	public void setPeliculas(List<Pelicula> peliculas) {
+		this.peliculas = peliculas;
+	}
+
+	public String getFiltro() {
+		return filtro;
+	}
+
+	public void setFiltro(String filtro) {
+		this.filtro = filtro;
+	}
+	
+	
 	
 	
 }

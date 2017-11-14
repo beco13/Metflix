@@ -9,7 +9,6 @@ import com.metflix.AdministradorEJB;
 import com.metflix.Empleado;
 
 @ManagedBean
-
 public class EmpleadoBean 
 {
 	@EJB

@@ -27,51 +27,112 @@
 </head>
 <body>
 
-	<div class="container">
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Metflix</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">
+						Inicio
+						<span class="sr-only">
+						(current)
+						</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Películas
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Clientes
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Empleados
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Ventas
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Cerrar Sesión
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	
+	<BR />
+	<BR />
+
+	<div class="container">
+
 		<div class="row">
 			<div class="col-md-6">
-				<form jsf:id="formPelicula">				
-					<label for="ListaPeliculafiltro">filtro:</label> 
-					<input required="required" id="ListaPeliculafiltro"  type="text" jsf:value="#{ListaPeliculaBean.filtro}" />
-					<br/>
-					<input type="submit" class="btn btn-info"  jsf:action="#{listaPeliculasBean.buscarPeliculas}" value="Buscar" />
+				<form jsf:id="formPelicula">
+					<label for="ListaPeliculafiltro">filtro:</label> <input
+						required="required" id="ListaPeliculafiltro" type="text"
+						jsf:value="#{ListaPeliculaBean.filtro}" /> <br /> <input
+						type="submit" class="btn btn-info"
+						jsf:action="#{listaPeliculasBean.buscarPeliculas}" value="Buscar" />
 				</form>
 			</div>
 			<div class="col-md-6">
 				<form jsf:id="ListarTodasLasPeliculas">
-			 		<input type="submit" class="btn btn-success" jsf:action="#{listaPeliculasBean.listarPeliculas}" value="Mostrar todos los registros" />
-			 	</form>
+					<input type="submit" class="btn btn-success"
+						jsf:action="#{listaPeliculasBean.listarPeliculas}"
+						value="Mostrar todos los registros" />
+				</form>
 			</div>
 		</div>
+		
+		<BR />
+		<BR />
+			
 		<div class="row">
 			<div class="col-md">
 				<table class="table">
 					<thead>
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Titulo</th>
-							<th scope="col">Sinopsis</th>
-							<th scope="col">Fecha estreno</th>
-							<th scope="col">Pais</th>
-							<th scope="col">Reparto</th>
-							<th scope="col">Director</th>
-							<th scope="col">Idioma</th>
-							<th scope="col">Clasificación</th>
-							<th scope="col">Calificación</th>
+							<th>#</th>
+							<th>Titulo</th>
+							<th>Fecha estreno</th>
+							<th>Pais</th>
+							<th>Idioma</th>
+							<th>Clasificación</th>
+							<th>Calificación</th>
+							<th>Opciones</th>
 						</tr>
 					</thead>
 					<tbody>
 
-						<ui:repeat var="tmpPelicula" varStatus="status" value="#{peliculas}">  
-								 
+						<ui:repeat var="pelicula" varStatus="status"
+							value="#{listaPeliculasBean.peliculas}">
+
 							<tr>
-								<td>
-									#{tmpPelicula.id}
-								</td>
-								<td col="9">
-									#{tmpPelicula.titulo}
-								</td>
+								<td>#{pelicula.id}</td>
+								<td>#{pelicula.titulo}</td>
+								<td>#{pelicula.fechaEstreno}</td>
+								<td>#{pelicula.pais}</td>
+								<td>#{pelicula.idioma}</td>
+								<td>#{pelicula.clasificacion}</td>
+								<td>#{pelicula.calificacion}</td>
+								<td></td>
 							</tr>
 						</ui:repeat>
 

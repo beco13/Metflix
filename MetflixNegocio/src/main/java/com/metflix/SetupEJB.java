@@ -34,8 +34,6 @@ public class SetupEJB {
     	
     		long totalAdmins = entityManager.createNamedQuery(Administrador.COUNT_ADMIN, Long.class).getSingleResult();
     		
-    		System.out.println("valor admins: "+totalAdmins);
-    		
     		if(totalAdmins  == 0) {
     			Administrador tmpAdmin = new Administrador();
     			tmpAdmin.setNombre("Alejandro");
@@ -53,8 +51,23 @@ public class SetupEJB {
     			adminLore.setIdentificacion("1094885");
     			adminLore.setContrasena("1234qwer");
     			entityManager.persist(adminLore);
+    			
+
+        		Genero genero1 = new Genero();
+        		genero1.setNombre("Acción");
+        		entityManager.persist(genero1);
+        		
+        		Genero genero2 = new Genero();
+        		genero2.setNombre("Aventura");
+        		entityManager.persist(genero2);
+        		
+        		Genero genero3 = new Genero();
+        		genero3.setNombre("Comedia");
+        		entityManager.persist(genero3);
+        		
+        		Genero genero4 = new Genero();
+        		genero4.setNombre("Drama");
+        		entityManager.persist(genero4);
     		}
-    		
     }
-    
 }
