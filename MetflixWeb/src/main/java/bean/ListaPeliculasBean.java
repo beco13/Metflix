@@ -21,12 +21,16 @@ public class ListaPeliculasBean
 	public void listarPeliculas()
 	{
 		peliculas = administradorEJB.consultarPeliculas();
-		System.out.println("Mostrando peliculas: "+peliculas.toString());
 	}
 	
 	public void buscarPeliculas()
 	{
 		peliculas = administradorEJB.buscarPeliculaPorTitulo(filtro);
+	}
+	
+	public void eliminarPelicula(int pelicula_id) {
+		administradorEJB.eliminarPelicula(pelicula_id);
+		listarPeliculas();
 	}
 	
 	
@@ -45,7 +49,6 @@ public class ListaPeliculasBean
 	public void setFiltro(String filtro) {
 		this.filtro = filtro;
 	}
-	
 	
 	
 	

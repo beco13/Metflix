@@ -269,11 +269,8 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	public void eliminarPelicula(Integer id) 
 	{
 
-		Pelicula tmpPelicula = buscarPeliculaPorId(id);
-
-		em.getTransaction().begin();
+		Pelicula tmpPelicula = buscarPeliculaPorId(id);		
 		em.remove(tmpPelicula);
-		em.getTransaction().commit();
 	}
 
 	/**
