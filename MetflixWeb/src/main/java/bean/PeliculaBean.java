@@ -32,21 +32,18 @@ public class PeliculaBean {
 	private String sinopsis;
 	private String titulo;
 	private String genero;
-/*
-	public List<Genero> generos() {
-		return administradorEJB.consultarGeneros();
-	}*/
 
+	
 	public String registrarPelicula() {
 		try {
-			Pelicula pelicula = (Pelicula) administradorEJB.registrarPelicula(titulo, calificacion, clasificacion,
+			Pelicula tmpPelicula = (Pelicula) administradorEJB.registrarPelicula(titulo, calificacion, clasificacion,
 					director, fecha_estreno, genero, idioma, pais, reparto, sinopsis);
-			
 
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro exitoso",
-					"Registro exitoso" + pelicula.toString());
+					"Registro exitoso: " + tmpPelicula.toString());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-			return "detallesPelicula";
+			
+			return  "detallesPelicula?faces-redirect=true&id="+Integer.toString(tmpPelicula.getId());
 		} catch (Exception e) {
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), e.getMessage());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);

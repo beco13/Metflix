@@ -8,6 +8,9 @@
 <head>
 
 <title>Detalles Pelicula</title>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -27,7 +30,7 @@
 </head>
 <body>
 
-
+ 	<f:event type="preRenderView" listener="#{detallesPeliculaBean.init}" />
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Metflix</a>
@@ -96,52 +99,52 @@
 						<tr>
 
 							<td>#{translator['pelicula.calificacion']}:</td>
-							<td>#{peliculaBean.calificacion}</td>
+							<td>#{detallesPeliculaBean.calificacion}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.clasificacion']}:</td>
-							<td>#{peliculaBean.clasificacion}</td>
+							<td>#{detallesPeliculaBean.clasificacion}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.director']}:</td>
-							<td>#{peliculaBean.director}</td>
+							<td>#{detallesPeliculaBean.director}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.fechaEstreno']}:</td>
-							<td>#{peliculaBean.fecha_estreno}</td>
+							<td>#{detallesPeliculaBean.fecha_estreno}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.idioma']}:</td>
-							<td>#{peliculaBean.idioma}</td>
+							<td>#{detallesPeliculaBean.idioma}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.pais']}:</td>
-							<td>#{peliculaBean.pais}</td>
+							<td>#{detallesPeliculaBean.pais}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.reparto']}:</td>
-							<td>#{peliculaBean.reparto}</td>
+							<td>#{detallesPeliculaBean.reparto}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.sinopsis']}:</td>
-							<td>#{peliculaBean.sinopsis}</td>
+							<td>#{detallesPeliculaBean.sinopsis}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.titulo']}:</td>
-							<td>#{peliculaBean.titulo}</td>
+							<td>#{detallesPeliculaBean.titulo}</td>
 						</tr>
 						<tr>
 
 							<td>#{translator['pelicula.genero']}:</td>
-							<td>#{peliculaBean.genero}</td>
+							<td>#{detallesPeliculaBean.genero}</td>
 						</tr>
 
 					</tbody>

@@ -8,6 +8,7 @@
 <head>
 
 <title>Lista de Peliculas</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -175,7 +176,14 @@
 								<td>#{pelicula.clasificacion}</td>
 								<td>#{pelicula.calificacion}</td>
 								<td>
-								
+									
+									<h:link class="btn btn-light" outcome="detallesPelicula?id=#{pelicula.id}">
+										<i class="fa fa-search-plus" aria-hidden="true"></i>
+									</h:link>
+									
+									<h:link class="btn btn-danger" outcome="index">
+										<i class="fa fa-trash" aria-hidden="true"></i>
+									</h:link>
 								</td>
 							</tr>
 						</ui:repeat>
