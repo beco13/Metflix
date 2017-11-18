@@ -7,14 +7,14 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<ui:composition template="/templates/template_root.xhtml">
 		<ui:define name="title">
-			Detalles de Pelicula · Metflix
+			Detalles de Empleado · Metflix
 		</ui:define>
 		<ui:define name="content">
 	
 		 	<f:event type="preRenderView" listener="#{administradorPeliculaDetallesBean.init}" />
 			
 			<h2 class="text-center">
-				Detalles de la Pelicula		
+				Detalles del Empleado		
 			</h2>
 		
 			<div class="container">
@@ -25,56 +25,25 @@
 		
 							<tbody>
 								<tr>
-		
-									<td>#{translator['pelicula.calificacion']}:</td>
-									<td>#{administradorPeliculaDetallesBean.calificacion}</td>
+									<td class="text-right font-weight-bold">#{translator['pelicula.calificacion']}:</td>
+									<td></td>
 								</tr>
 								<tr>
-		
-									<td>#{translator['pelicula.clasificacion']}:</td>
-									<td>#{administradorPeliculaDetallesBean.clasificacion}</td>
+									<td class="text-right font-weight-bold">#{translator['pelicula.clasificacion']}:</td>
+									<td></td>
 								</tr>
 								<tr>
-		
-									<td>#{translator['pelicula.director']}:</td>
-									<td>#{administradorPeliculaDetallesBean.director}</td>
+									<td class="text-right font-weight-bold">#{translator['pelicula.director']}:</td>
+									<td></td>
 								</tr>
 								<tr>
-		
-									<td>#{translator['pelicula.fechaEstreno']}:</td>
-									<td>#{administradorPeliculaDetallesBean.fecha_estreno}</td>
+									<td class="text-right font-weight-bold">#{translator['pelicula.fechaEstreno']}:</td>
+									<td></td>
 								</tr>
 								<tr>
-		
-									<td>#{translator['pelicula.idioma']}:</td>
-									<td>#{administradorPeliculaDetallesBean.idioma}</td>
+									<td class="text-right font-weight-bold">#{translator['pelicula.idioma']}:</td>
+									<td></td>
 								</tr>
-								<tr>
-		
-									<td>#{translator['pelicula.pais']}:</td>
-									<td>#{administradorPeliculaDetallesBean.pais}</td>
-								</tr>
-								<tr>
-		
-									<td>#{translator['pelicula.reparto']}:</td>
-									<td>#{administradorPeliculaDetallesBean.reparto}</td>
-								</tr>
-								<tr>
-		
-									<td>#{translator['pelicula.sinopsis']}:</td>
-									<td>#{administradorPeliculaDetallesBean.sinopsis}</td>
-								</tr>
-								<tr>
-		
-									<td>#{translator['pelicula.titulo']}:</td>
-									<td>#{administradorPeliculaDetallesBean.titulo}</td>
-								</tr>
-								<tr>
-		
-									<td>#{translator['pelicula.genero']}:</td>
-									<td>#{administradorPeliculaDetallesBean.genero}</td>
-								</tr>
-		
 							</tbody>
 						</table>
 					</div>
