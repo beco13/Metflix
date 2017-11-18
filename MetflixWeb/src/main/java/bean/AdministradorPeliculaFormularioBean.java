@@ -2,11 +2,14 @@ package bean;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ComponentSystemEvent;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 
@@ -16,10 +19,13 @@ import com.metflix.Genero;
 import com.metflix.Pelicula;
 
 @ManagedBean
-public class PeliculaBean {
+public class AdministradorPeliculaFormularioBean {
 
 	@EJB
 	private AdministradorEJB administradorEJB;
+	
+	private List<Genero> generos;
+	private String id;
 	@DecimalMax("5.0")
 	@DecimalMin("0.0")
 	private double calificacion;
@@ -33,24 +39,105 @@ public class PeliculaBean {
 	private String titulo;
 	private String genero;
 
-	
-	public String registrarPelicula() {
-		try {
-			Pelicula tmpPelicula = (Pelicula) administradorEJB.registrarPelicula(titulo, calificacion, clasificacion,
-					director, fecha_estreno, genero, idioma, pais, reparto, sinopsis);
+	/**
+	 * permite inicializar los datos necesarios para el funcionamiento del formulario
+	 */
+	@PostConstruct
+	public void init() {
+		cargarGeneros();
+	}
 
-			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro exitoso",
-					"Registro exitoso: " + tmpPelicula.toString());
-			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+	/**
+	 * metodo que se ejecuta antes de cargar la vista y permite cargar los datos de una pelicula, 
+	 * esto para el caso en que se este editando
+	 * 
+	 * @param event
+	 */
+	public void initView(ComponentSystemEvent event) {
+		
+		if(cargarIdParametro() != null) {
+			if(id == null) {
+				id = cargarIdParametro();
+				cargarPelicula(id);
+			}
+		}
+	}
+	
+	/**
+	 * permite obtener el id recibido por parametro
+	 * 
+	 * @return
+	 */
+	public String cargarIdParametro() {
+		
+		Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		// String parameterOne = params.get("parameterOne");
+		return params.get("id");
+	}
+	
+
+	/**
+	 * permite consultar la informacion de una pelicula para cargar los datos sobre el formulario
+	 * 
+	 * @param pelicula_id
+	 */
+	public void cargarPelicula(String pelicula_id) {
+		Pelicula tmpPelicula = administradorEJB.buscarPeliculaPorId(Integer.parseInt(pelicula_id));
+
+		if (tmpPelicula != null) {
+			id = Integer.toString(tmpPelicula.getId());
+			calificacion = tmpPelicula.getCalificacion();
+			clasificacion = tmpPelicula.getClasificacion();
+			director = tmpPelicula.getDirector();
+			fecha_estreno = tmpPelicula.getFechaEstreno();
+			idioma = tmpPelicula.getIdioma();
+			pais = tmpPelicula.getPais();
+			reparto = tmpPelicula.getReparto();
+			sinopsis = tmpPelicula.getSinopsis();
+			titulo = tmpPelicula.getTitulo();
+			genero = Integer.toString(tmpPelicula.getGenero().getId());
+		}
+	}
+
+	/**
+	 * permite registrar o guardar los cambios de una pelicula
+	 * @return
+	 */
+	public String guardar() {
+		
+		try {
 			
-			return  "detallesPelicula?faces-redirect=true&id="+Integer.toString(tmpPelicula.getId());
+			FacesMessage facesMsg;
+			
+			if(id == null || id.trim() == "") {
+				Pelicula tmpPelicula = (Pelicula) administradorEJB.registrarPelicula(titulo, calificacion, clasificacion, director, fecha_estreno, Integer.parseInt(genero), idioma, pais, reparto, sinopsis);
+				 facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro exitoso", "Registro exitoso: " + tmpPelicula.toString());
+				id = Integer.toString(tmpPelicula.getId());
+			}else {
+				administradorEJB.actualizarPelicula(Integer.parseInt(id), titulo, calificacion, clasificacion, director, fecha_estreno, Integer.parseInt(genero), idioma, pais, reparto, sinopsis);
+				facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cambios guardados", "Cambios guardados ");
+			}
+			
+			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+			return  "detalles?faces-redirect=true&id="+id;
+			
 		} catch (Exception e) {
 			FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), e.getMessage());
 			FacesContext.getCurrentInstance().addMessage(null, facesMsg);
 		}
+	
 		return null;
 	}
 
+	/**
+	 * permite cargar los generos
+	 */
+	public void cargarGeneros() {
+		generos = administradorEJB.consultarGeneros();
+		System.out.println("generos: "+generos.toString());
+	}
+	
+	
 	public AdministradorEJB getAdministradorEJB() {
 		return administradorEJB;
 	}
@@ -139,5 +226,18 @@ public class PeliculaBean {
 		this.genero = genero;
 	}
 
+	public String getId() {
+		return id;
+	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public List<Genero> getGeneros() {
+		return generos;
+	}
+	public void setGeneros(List<Genero> generos) {
+		this.generos = generos;
+	}
 }

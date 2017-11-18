@@ -34,7 +34,7 @@ public class Pelicula implements Serializable {
 	private String sinopsis;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "fecha_estreno")
+	@Column(name = "FECHA_ESTRENO")
 	private Date fechaEstreno;
 	
 	@Column(length = 100)
@@ -48,12 +48,8 @@ public class Pelicula implements Serializable {
 	@Column(length = 45)
 	private String idioma;
 	
-	//@ManyToOne
-	//private Genero genero;
-	
-	@Column(length = 100)
-	private String genero;
-
+	@ManyToOne
+	private Genero genero;
 
 	@Column(length = 56)
 	private String clasificacion;
@@ -79,14 +75,6 @@ public class Pelicula implements Serializable {
 	}
 	
 	
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
-
 	public Integer getId() {
 		return id;
 	}
@@ -150,7 +138,7 @@ public class Pelicula implements Serializable {
 	public void setIdioma(String idioma) {
 		this.idioma = idioma;
 	}
-/*
+
 	public Genero getGenero() {
 		return genero;
 	}
@@ -158,7 +146,7 @@ public class Pelicula implements Serializable {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-	*/
+	
 
 	public String getClasificacion() {
 		return clasificacion;

@@ -10,30 +10,36 @@ import com.metflix.AdministradorEJB;
 import com.metflix.Pelicula;
 
 @ManagedBean
-public class ListaPeliculasBean 
-{
+public class AdministradorPeliculaListaBean {
 	@EJB
 	private AdministradorEJB administradorEJB;
 	private List<Pelicula> peliculas;
 	private String filtro;
-	
+
+	/**
+	 * permite obtener todos los registros de peliculas
+	 */
 	@PostConstruct
-	public void listarPeliculas()
-	{
+	public void listarPeliculas() {
 		peliculas = administradorEJB.consultarPeliculas();
 	}
-	
-	public void buscarPeliculas()
-	{
+
+	/**
+	 * permite buscar peliculas por nombre
+	 */
+	public void buscarPeliculas() {
 		peliculas = administradorEJB.buscarPeliculaPorTitulo(filtro);
 	}
-	
+
+	/**
+	 * permite eliminar peliculas por el id de registro
+	 * @param pelicula_id
+	 */
 	public void eliminarPelicula(int pelicula_id) {
 		administradorEJB.eliminarPelicula(pelicula_id);
 		listarPeliculas();
 	}
-	
-	
+
 	public List<Pelicula> getPeliculas() {
 		return peliculas;
 	}
@@ -49,7 +55,5 @@ public class ListaPeliculasBean
 	public void setFiltro(String filtro) {
 		this.filtro = filtro;
 	}
-	
-	
-	
+
 }

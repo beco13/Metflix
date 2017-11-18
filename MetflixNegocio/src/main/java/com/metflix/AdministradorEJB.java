@@ -149,9 +149,12 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 * @param sinopsis
 	 */
 	public Pelicula registrarPelicula(String titulo, Double calificacion, String clasificacion, String director,
-			Date fechaEstreno, String genero, String idioma, String pais, String reparto, String sinopsis) {
+			Date fechaEstreno, int genero_id, String idioma, String pais, String reparto, String sinopsis) {
 		
-		Pelicula pelicula= null;
+			Genero genero = buscarGeneroPorId(genero_id);
+			
+		
+			Pelicula pelicula= null;
 
 			pelicula = new Pelicula();
 			pelicula.setTitulo(titulo);
@@ -159,7 +162,9 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 			pelicula.setClasificacion(clasificacion);
 			pelicula.setDirector(director);
 			pelicula.setFechaEstreno(new Date());
-			pelicula.setGenero(genero);
+			if(genero != null) {
+				pelicula.setGenero(genero);
+			}
 			pelicula.setIdioma(idioma);
 			pelicula.setPais(pais);
 			pelicula.setReparto(reparto);
@@ -249,7 +254,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		pelicula.setClasificacion(clasificacion);
 		pelicula.setDirector(director);
 		pelicula.setFechaEstreno(new Date());
-		//pelicula.setGenero(genero);
+		pelicula.setGenero(tmpGenero);
 		pelicula.setIdioma(idioma);
 		pelicula.setPais(pais);
 		pelicula.setReparto(reparto);
@@ -441,14 +446,6 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 
 		return tmpCorreo.enviar() ? 1 : 0;
 	}
-
-	@Override
-	public Pelicula registrarPelicula(String titulo, Double calificacion, String clasificacion, String director,
-			Date fechaEstreno, int genero_id, String idioma, String pais, String reparto, String sinopsis) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 
 }

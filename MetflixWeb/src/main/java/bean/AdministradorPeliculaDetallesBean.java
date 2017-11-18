@@ -15,7 +15,7 @@ import com.metflix.Pelicula;
 
 @ManagedBean
 @RequestScoped
-public class DetallesPeliculaBean {
+public class AdministradorPeliculaDetallesBean {
 	
 	@EJB
 	private AdministradorEJB administradorEJB;
@@ -35,7 +35,7 @@ public class DetallesPeliculaBean {
 	private String genero;
 
 	
-	public DetallesPeliculaBean() {
+	public AdministradorPeliculaDetallesBean() {
 		
 	}
 	
@@ -63,7 +63,7 @@ public class DetallesPeliculaBean {
 			reparto = tmpPelicula.getReparto();
 			sinopsis = tmpPelicula.getSinopsis();
 			titulo = tmpPelicula.getTitulo();
-			genero = tmpPelicula.getGenero();
+			genero = tmpPelicula.getGenero().getNombre();
 		}
 	}
 

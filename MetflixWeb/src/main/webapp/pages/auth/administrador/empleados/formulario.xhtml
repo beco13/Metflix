@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:jsf="http://xmlns.jcp.org/jsf"
@@ -11,8 +12,7 @@
 </head>
 <body>
 	<form jsf:id="formEmpleado">
-		<label for="nombreEmpleado">Nombre:</label> 
-		<input required="required" id="nombreEmpleado" type="text" jsf:value="#{empleadoBean.nombre}" /> 
+		 
 		<br/>
 		<label for="apellidoEmpleado">Apellido:</label> 
 		<input required="required" id="apellidoEmpleado" type="text" jsf:value="#{empleadoBean.apellido}" /> 
@@ -31,4 +31,78 @@
 <h:messages/>
 
 </body>
+</html>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Formulario de Empleados · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+			<f:event type="preRenderView" listener="#{administradorPeliculaFormularioBean.initView}" />
+	
+			<form jsf:id="formPelicula">
+			
+				<input class="form-control"
+					required="required" id="idPelicula" type="hidden"
+					jsf:value="#{administradorPeliculaFormularioBean.id}" />
+							
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 ">
+			
+							
+							<div class="form-group">
+								<label for="nombreEmpleado">Nombre:</label> 
+								<input  class="form-control" required="required" id="nombreEmpleado" type="text" jsf:value="#{empleadoBean.nombre}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+							
+							<div class="form-group">
+								<label for="apellidoEmpleado">Apellido:</label> 
+								<input class="form-control" required="required" id="apellidoEmpleado" type="text" jsf:value="#{empleadoBean.apellido}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+							
+			
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+					
+					
+							<button 
+								type="submit" 
+								class="btn btn-success" 
+								jsf:action="#{administradorPeliculaFormularioBean.guardar}"
+								>
+					 			#{translator['label.guardar']}
+					 		</button>
+						</div>
+					</div>
+				</div>
+
+			</form>
+			<h:messages />
+			
+			<br />
+			<br />		 	
+	
+		</ui:define>
+	</ui:composition>
 </html>

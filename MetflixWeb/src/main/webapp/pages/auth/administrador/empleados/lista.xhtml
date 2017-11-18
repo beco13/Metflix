@@ -7,29 +7,30 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<ui:composition template="/templates/template_root.xhtml">
 		<ui:define name="title">
-			Lista de Peliculas · Metflix
+			Lista de Empleados · Metflix
 		</ui:define>
 		<ui:define name="content">
+		
+			<h2 class="text-center">
+				Empleados
+			</h2>
+		
 	
 			<div class="container">
-			
-			<h2 class="text-center">
-				Películas
-			</h2>
 		
 				<div class="row">
 					<div class="col-md-4">
 						<form jsf:id="formPelicula">
 								<div class="form-group">
 									<label for="ListaPeliculafiltro">
-										#{translator['listaPeliculas.filtro']}:
+										Buscar:
 									</label> 
 									<input
 										required="required" id="ListaPeliculafiltro" type="text" class="form-control"
 										jsf:value="#{administradorPeliculaListaBean.filtro}" /> 
 										<small
 											 class="form-text text-muted">
-											#{translator['listaPeliculas.descripcionFiltro']}
+											Actualmente solo se busca por identificacion
 										</small>
 								</div>
 								 <button 
@@ -37,7 +38,7 @@
 									class="btn btn-info"
 									jsf:action="#{administradorPeliculaListaBean.buscarPeliculas}"
 								 		>
-						 			#{translator['listaPeliculas.buscarRegistros']}
+						 			buscar
 						 		</button>
 						</form>
 					</div>
@@ -48,11 +49,11 @@
 								class="btn btn-success"
 								jsf:action="#{administradorPeliculaListaBean.listarPeliculas}"
 							 		>
-					 			#{translator['listaPeliculas.mostrarRegistros']}
+					 			Mostrar todos los registros
 					 			
 					 		</button>
 								<h:link class="btn btn-primary" outcome="formulario">
-									#{translator['listaPeliculas.registrarPelicula']}
+									Nuevo Empleado
 								</h:link>
 						</form>
 						

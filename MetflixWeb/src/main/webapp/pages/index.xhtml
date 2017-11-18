@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="content">
+	
+			<br />
+			<br />
+			
+			<div class="text-center">
+				<img src="/MetflixWeb/assets/images/logo-metflix.jpg" class="img-fluid logo-login" alt="logo" />
+			</div>
+			
+			<br />
+			<br />
+			
+		 	<h1 class="text-center">
+		 		#{translator['label.saludo']}
+		 	</h1>
+		 	
+		 	
+			<br />
+			<br />
+			
+
+			<div class="text-center">
+				
+		 		
+		 		<h:link class="btn btn-success" outcome="login">
+					Iniciar Sesión
+				</h:link>
+		 		
+		 		<h:link class="btn btn-info" outcome="recordarPassword">
+					¿Olvidó la contraseña?
+				</h:link>
+				
+				<h:link class="btn btn-primary" outcome="registrarse">
+					Crear Cuenta
+				</h:link>
+		 		
+			</div>
+		 	
+	
+		</ui:define>
+	</ui:composition>
+</html>
