@@ -8,9 +8,6 @@
 	<ui:composition template="/templates/template_root.xhtml">
 		<ui:define name="content">
 	
-			<br />
-			<br />
-			
 			<div class="text-center">
 				<img src="/MetflixWeb/assets/images/logo-metflix.jpg" class="img-fluid logo-login" alt="logo" />
 			</div>
@@ -26,17 +23,18 @@
 			<br />
 			<br />
 			
-
-			<div class="text-center">
+			<div class="text-center" jsf:rendered="#{authBean.estado eq false}">
 				
 		 		
 		 		<h:link class="btn btn-success" outcome="login">
 					Iniciar Sesión
 				</h:link>
+				<h:outputText value="&#160;" />
 		 		
 		 		<h:link class="btn btn-info" outcome="recordarPassword">
 					¿Olvidó la contraseña?
 				</h:link>
+				<h:outputText value="&#160;" />
 				
 				<h:link class="btn btn-primary" outcome="registrarse">
 					Crear Cuenta

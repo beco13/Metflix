@@ -11,7 +11,7 @@
 		</ui:define>
 		<ui:define name="content">
 	
-		 	<f:event type="preRenderView" listener="#{administradorPeliculaDetallesBean.init}" />
+		 	<f:event type="preRenderView" listener="#{administradorEmpleadoDetallesBean.init}" />
 			
 			<h2 class="text-center">
 				Detalles del Empleado		
@@ -25,24 +25,34 @@
 		
 							<tbody>
 								<tr>
-									<td class="text-right font-weight-bold">#{translator['pelicula.calificacion']}:</td>
-									<td></td>
+									<td class="text-right font-weight-bold">#{translator['persona.nombre']}:</td>
+									<td>
+										#{administradorEmpleadoDetallesBean.nombre}
+									</td>
 								</tr>
 								<tr>
-									<td class="text-right font-weight-bold">#{translator['pelicula.clasificacion']}:</td>
-									<td></td>
+									<td class="text-right font-weight-bold">#{translator['persona.apellido']}:</td>
+									<td>
+										#{administradorEmpleadoDetallesBean.apellido}
+									</td>
 								</tr>
 								<tr>
-									<td class="text-right font-weight-bold">#{translator['pelicula.director']}:</td>
-									<td></td>
+									<td class="text-right font-weight-bold">#{translator['persona.identificacion']}:</td>
+									<td>
+										#{administradorEmpleadoDetallesBean.identificacion}
+									</td>
 								</tr>
 								<tr>
-									<td class="text-right font-weight-bold">#{translator['pelicula.fechaEstreno']}:</td>
-									<td></td>
+									<td class="text-right font-weight-bold">#{translator['persona.correo']}:</td>
+									<td>
+										#{administradorEmpleadoDetallesBean.correo}
+									</td>
 								</tr>
 								<tr>
-									<td class="text-right font-weight-bold">#{translator['pelicula.idioma']}:</td>
-									<td></td>
+									<td class="text-right font-weight-bold">#{translator['persona.contrasena']}:</td>
+									<td>
+										#{administradorEmpleadoDetallesBean.contrasena}
+									</td>
 								</tr>
 							</tbody>
 						</table>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Tickets de Soporte · Metflix
+		</ui:define>
+		<ui:define name="content">
+		
+			<h2 class="text-center">
+				Tickets Soporte
+			</h2>
+	
+			<div class="container">
+		
+				<div class="row">
+					<div class="col-md-12">
+						<form jsf:id="ListarTickets">
+							<button 
+							 	type="submit" 
+								class="btn btn-success"
+								jsf:action="#{clienteTicketListaBean.listar(authBean.user.id)}"
+							 		>
+					 			Mostrar todos los registros
+					 		</button>
+					 		<h:link class="btn btn-primary" outcome="agregar">
+								Registrar Ticket
+							</h:link>
+						</form>
+					</div>
+				</div>
+				
+				<BR />
+				<BR />
+					
+				<div class="row">
+					<div class="col-md">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>
+										Asunto
+									</th>
+									<th>
+										Fecha
+									</th>
+									<th>
+										Resuelto
+									</th>
+									<th>
+										#{translator['generalTabla.opciones']}
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<ui:repeat var="ticket" varStatus="status" value="#{clienteTicketListaBean.tickets}">
+									<tr>
+										<td>#{ticket.id}</td>
+										<td>#{ticket.asunto}</td>
+										<td>#{ticket.fecha}</td>
+										<td>
+											<i class="fa fa-check" jsf:rendered="#{ticket.estado eq true}" aria-hidden="true"></i>
+										</td>
+										<td>
+											<h:link class="btn btn-light" outcome="detalles?id=#{ticket.id}">
+												<i class="fa fa-search-plus" aria-hidden="true"></i>
+											</h:link>
+										</td>
+									</tr>
+								</ui:repeat>
+		
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+				 	
+	
+		</ui:define>
+	</ui:composition>
+</html>

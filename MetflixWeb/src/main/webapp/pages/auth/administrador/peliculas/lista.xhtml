@@ -51,7 +51,7 @@
 					 			#{translator['listaPeliculas.mostrarRegistros']}
 					 			
 					 		</button>
-								<h:link class="btn btn-primary" outcome="formulario">
+								<h:link class="btn btn-primary" outcome="agregar">
 									#{translator['listaPeliculas.registrarPelicula']}
 								</h:link>
 						</form>
@@ -105,7 +105,7 @@
 											
 											<form jsf:id="formCambioIdioma">
 												
-												<h:link class="btn btn-light" outcome="formulario?id=#{pelicula.id}">
+												<h:link class="btn btn-light" outcome="editar?id=#{pelicula.id}">
 													<i class="fa fa-pencil" aria-hidden="true"></i>
 												</h:link>
 												

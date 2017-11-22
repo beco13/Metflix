@@ -7,7 +7,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<ui:composition template="/templates/template_root.xhtml">
 		<ui:define name="title">
-			Formulario de Peliculas · Metflix
+			Editar Pelicula · Metflix
 		</ui:define>
 		<ui:define name="content">
 	
@@ -15,9 +15,13 @@
 	
 			<form jsf:id="formPelicula">
 			
-				<input class="form-control"
-					required="required" id="idPelicula" type="hidden"
-					jsf:value="#{administradorPeliculaFormularioBean.id}" />
+				<input 
+					class="form-control"
+					required="required"
+					id="idPelicula" 
+					type="hidden"
+					jsf:value="#{administradorPeliculaFormularioBean.id}"
+						/>
 							
 				<div class="container">
 					<div class="row">

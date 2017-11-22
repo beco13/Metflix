@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Lista de Clientes · Metflix
+		</ui:define>
+		<ui:define name="content">
+		
+			<h2 class="text-center">
+				Clientes
+			</h2>
+		
+	
+			<div class="container">
+		
+				<div class="row">
+					<div class="col-md-4">
+						<form jsf:id="formFiltroEmpleado">
+								<div class="form-group">
+									<label for="ListaClientefiltro">
+										Buscar por cedula:
+									</label> 
+									<input
+										required="required" id="ListaClientefiltro" type="text" class="form-control"
+										jsf:value="#{empleadoClienteListaBean.filtro}" /> 
+										<small
+											 class="form-text text-muted">
+											Actualmente solo se busca por identificación
+										</small>
+								</div>
+								 <button 
+								 	type="submit" 
+									class="btn btn-info"
+									jsf:action="#{empleadoClienteListaBean.buscar}"
+								 		>
+						 			buscar
+						 		</button>
+						</form>
+					</div>
+					<div class="col-md-8">
+						<form jsf:id="ListarTodasLasPeliculas">
+							<button 
+							 	type="submit" 
+								class="btn btn-success"
+								jsf:action="#{empleadoClienteListaBean.listar}"
+							 		>
+					 			Mostrar todos los registros
+					 			
+					 		</button>
+						</form>
+						
+					</div>
+				</div>
+				
+				<BR />
+				<BR />
+					
+				<div class="row">
+					<div class="col-md">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>
+										#{translator['persona.nombre']}
+									</th>
+									<th>
+										#{translator['persona.apellido']}
+									</th>
+									<th>
+										#{translator['persona.identificacion']}
+									</th>
+									<th>
+										#{translator['persona.correo']}
+									</th>
+									<th>
+										#{translator['persona.contrasena']}
+									</th>
+									<th>
+										#{translator['generalTabla.opciones']}
+									</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+		
+								<ui:repeat var="cliente" varStatus="status"
+									value="#{empleadoClienteListaBean.clientes}">
+		
+									<tr>
+										<td>#{cliente.id}</td>
+										<td>#{cliente.nombre}</td>
+										<td>#{cliente.apellido}</td>
+										<td>#{cliente.identificacion}</td>
+										<td>#{cliente.correo}</td>
+										<td>#{cliente.contrasena}</td>
+										<td>	
+											<h:link class="btn btn-light" outcome="detalles?id=#{cliente.id}">
+												<i class="fa fa-search-plus" aria-hidden="true"></i>
+											</h:link>
+										</td>
+									</tr>
+								</ui:repeat>
+		
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+				 	
+	
+		</ui:define>
+	</ui:composition>
+</html>

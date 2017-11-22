@@ -20,23 +20,23 @@
 		
 				<div class="row">
 					<div class="col-md-4">
-						<form jsf:id="formPelicula">
+						<form jsf:id="formFiltroEmpleado">
 								<div class="form-group">
-									<label for="ListaPeliculafiltro">
-										Buscar:
+									<label for="ListaEmpleadofiltro">
+										Buscar por cedula:
 									</label> 
 									<input
-										required="required" id="ListaPeliculafiltro" type="text" class="form-control"
-										jsf:value="#{administradorPeliculaListaBean.filtro}" /> 
+										required="required" id="ListaEmpleadofiltro" type="text" class="form-control"
+										jsf:value="#{administradorEmpleadoListaBean.filtro}" /> 
 										<small
 											 class="form-text text-muted">
-											Actualmente solo se busca por identificacion
+											Actualmente solo se busca por identificación
 										</small>
 								</div>
 								 <button 
 								 	type="submit" 
 									class="btn btn-info"
-									jsf:action="#{administradorPeliculaListaBean.buscarPeliculas}"
+									jsf:action="#{administradorEmpleadoListaBean.buscar}"
 								 		>
 						 			buscar
 						 		</button>
@@ -47,12 +47,12 @@
 							<button 
 							 	type="submit" 
 								class="btn btn-success"
-								jsf:action="#{administradorPeliculaListaBean.listarPeliculas}"
+								jsf:action="#{administradorEmpleadoListaBean.listar}"
 							 		>
 					 			Mostrar todos los registros
 					 			
 					 		</button>
-								<h:link class="btn btn-primary" outcome="formulario">
+								<h:link class="btn btn-primary" outcome="agregar">
 									Nuevo Empleado
 								</h:link>
 						</form>
@@ -70,19 +70,19 @@
 								<tr>
 									<th>#</th>
 									<th>
-										#{translator['pelicula.titulo']}
+										#{translator['persona.nombre']}
 									</th>
 									<th>
-										#{translator['pelicula.fechaEstreno']}
+										#{translator['persona.apellido']}
 									</th>
 									<th>
-										#{translator['pelicula.idioma']}
+										#{translator['persona.identificacion']}
 									</th>
 									<th>
-										#{translator['pelicula.clasificacion']}
+										#{translator['persona.correo']}
 									</th>
 									<th>
-										#{translator['pelicula.calificacion']}
+										#{translator['persona.contrasena']}
 									</th>
 									<th>
 										#{translator['generalTabla.opciones']}
@@ -92,29 +92,29 @@
 							</thead>
 							<tbody>
 		
-								<ui:repeat var="pelicula" varStatus="status"
-									value="#{administradorPeliculaListaBean.peliculas}">
+								<ui:repeat var="empleado" varStatus="status"
+									value="#{administradorEmpleadoListaBean.empleados}">
 		
 									<tr>
-										<td>#{pelicula.id}</td>
-										<td>#{pelicula.titulo}</td>
-										<td>#{pelicula.fechaEstreno}</td>
-										<td>#{pelicula.idioma}</td>
-										<td>#{pelicula.clasificacion}</td>
-										<td>#{pelicula.calificacion}</td>
+										<td>#{empleado.id}</td>
+										<td>#{empleado.nombre}</td>
+										<td>#{empleado.apellido}</td>
+										<td>#{empleado.identificacion}</td>
+										<td>#{empleado.correo}</td>
+										<td>#{empleado.contrasena}</td>
 										<td>
 											
 											<form jsf:id="formCambioIdioma">
 												
-												<h:link class="btn btn-light" outcome="formulario?id=#{pelicula.id}">
+												<h:link class="btn btn-light" outcome="editar?id=#{empleado.id}">
 													<i class="fa fa-pencil" aria-hidden="true"></i>
 												</h:link>
 												
-												<h:link class="btn btn-light" outcome="detalles?id=#{pelicula.id}">
+												<h:link class="btn btn-light" outcome="detalles?id=#{empleado.id}">
 													<i class="fa fa-search-plus" aria-hidden="true"></i>
 												</h:link>
 												
-										 		<button type="submit" class="btn btn-danger" jsf:action="#{administradorPeliculaListaBean.eliminarPelicula(pelicula.id)}" onclick="if (! confirm('Realmente deseas eliminar el registro?')) return false" >
+										 		<button type="submit" class="btn btn-danger" jsf:action="#{administradorEmpleadoListaBean.eliminar(empleado.id)}" onclick="if (! confirm('Realmente deseas eliminar el registro?')) return false" >
 										 			<i class="fa fa-trash" aria-hidden="true"></i>
 										 		</button>
 										 	</form>

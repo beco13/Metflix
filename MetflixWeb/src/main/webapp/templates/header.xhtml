@@ -10,9 +10,39 @@
 	<ui:composition >
 	    
 	    <header>
-	    		<div>
-	    			<ui:include src="/templates/menu_administrador.xhtml"/>
-	    		</div>
+    				
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#">Metflix</a>
+				<button 
+					class="navbar-toggler" 
+					type="button" 
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div jsf:rendered="#{authBean.userEsCliente()}" style="margin: 0 auto;" >
+					<ui:include src="/templates/menu_cliente.xhtml" />
+				</div>
+				
+				<div jsf:rendered="#{authBean.userEsEmpleado()}" style="margin: 0 auto;" >
+					<ui:include src="/templates/menu_empleado.xhtml" />
+				</div>
+				
+				<div jsf:rendered="#{authBean.userEsAdministrador()}" style="margin: 0 auto;" >
+					<ui:include src="/templates/menu_administrador.xhtml" />
+				</div>
+				
+			    <form jsf:id="formLogout" class="form-inline my-2 my-lg-0" jsf:rendered="#{authBean.estado eq true}">
+					<h:outputText value="&#160;" />
+			 		<button type="submit" class="btn btn-outline-success" jsf:action="#{authBean.logout}"  >
+			 			#{translator['menu.cerrarSesion']}
+			 		</button>
+			 	</form>
+		
+			</nav>
 			    					
 			<BR />
 			<BR />
@@ -22,8 +52,7 @@
 		 			#{translator['label.cambiarIdioma']}
 		 		</button>
 		 	</form>
-		 	
-			
+		 
 			<BR />
 			<BR />
 	    </header>

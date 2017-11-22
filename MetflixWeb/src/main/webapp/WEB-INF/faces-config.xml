@@ -13,5 +13,8 @@
 			<base-name>resources.mensajes</base-name>
 			<var>translator</var>
 		</resource-bundle>
+		<protected-views>
+			<url-pattern>/pages/auth/*</url-pattern>
+		</protected-views>
 	</application>
 </faces-config>

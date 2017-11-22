@@ -9,16 +9,16 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Tiquet
+ * Entity implementation class for Entity: Ticket
  *
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Tiquet.GET_BY_CLIENTE, query = "select tiquet from Tiquet tiquet where tiquet.cliente = :cliente" ),
-	@NamedQuery(name = Tiquet.GET_BY_ID, query = "select tiquet from Tiquet tiquet where tiquet.id = :id" ),
-	@NamedQuery(name = Tiquet.GET_ALL, query = "select tq from Tiquet tq" )
+	@NamedQuery(name = Ticket.GET_BY_CLIENTE, query = "select tiquet from Ticket tiquet where tiquet.cliente = :cliente" ),
+	@NamedQuery(name = Ticket.GET_BY_ID, query = "select tiquet from Ticket tiquet where tiquet.id = :id" ),
+	@NamedQuery(name = Ticket.GET_ALL, query = "select tq from Ticket tq" )
 })
-public class Tiquet implements Serializable {
+public class Ticket implements Serializable {
 
 	@Id
 	@GeneratedValue
@@ -28,18 +28,20 @@ public class Tiquet implements Serializable {
 	@Column(length = 100)
 	private String asunto;
 	
-	
+	@Column(length = 500)
 	private String descripcion;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha")
 	private Date fecha;
 	
+	private Boolean estado = false;
+	
 	@ManyToOne
 	private Cliente cliente;
 	
-	@OneToOne(mappedBy="tiquet")
-	private Respuesta respuesta;
+	@OneToOne(mappedBy="ticket")
+	private TicketRespuesta respuesta;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -48,7 +50,7 @@ public class Tiquet implements Serializable {
 	public static final String GET_BY_ID = "Tiquets_findById";
 	public static final String GET_ALL = "Tiquet_getAll";
 
-	public Tiquet() {
+	public Ticket() {
 		super();
 	}   
 	public Integer getId() {
@@ -85,6 +87,22 @@ public class Tiquet implements Serializable {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	public TicketRespuesta getRespuesta() {
+		return respuesta;
+	}
+	
+	public void setRespuesta(TicketRespuesta respuesta) {
+		this.respuesta = respuesta;
+	}
+	
+
+	public Boolean getEstado() {
+		return estado;
+	}
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
 	}
 	
 	@Override

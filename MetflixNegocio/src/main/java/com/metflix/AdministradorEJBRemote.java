@@ -12,7 +12,6 @@ public interface AdministradorEJBRemote {
 	
 	public Administrador login(String correo, String password);
 	
-	public int recuperarPassword(String correo);
 
 	public Genero buscarGeneroPorId(Integer id);
 
@@ -30,9 +29,9 @@ public interface AdministradorEJBRemote {
 	
 	public List<Pelicula> consultarPeliculas();
 	
-	public List<Pelicula> consultarPeliculasByCalificacion(Double calificacion);
-	
 	public Pelicula buscarPeliculaPorId(int pelicula_id);
+	
+	public List<Pelicula> buscarPelicula(String filtro) ;
 	
 	public void actualizarPelicula(int pelicula_id, String titulo, Double calificacion,String clasificacion, 
 			String director, Date fechaEstreno, int genero_id , String idioma, String pais, 
@@ -46,7 +45,7 @@ public interface AdministradorEJBRemote {
 	
 	public Empleado buscarEmpleadoPorId(int emplado_id);
 	
-	public Empleado buscarEmpleadoPorCedula(String cedula);
+	public List<Empleado> buscarEmpleadoPorCedula(String cedula) ;
 	
 	public void actualizarEmpleado(int id, String identificacion, String nombre, String apellido, String correo, String contrasena);
 	

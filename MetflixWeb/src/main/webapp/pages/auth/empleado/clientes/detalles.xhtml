@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Detalles del Cliente · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+		 	<f:event type="preRenderView" listener="#{empleadoClienteDetallesBean.init}" />
+			
+			<h2 class="text-center">
+				Detalles del Cliente		
+			</h2>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+		
+						<table class="table">
+		
+							<tbody>
+								<tr>
+									<td class="text-right font-weight-bold">#{translator['persona.nombre']}:</td>
+									<td>
+										#{empleadoClienteDetallesBean.nombre}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">#{translator['persona.apellido']}:</td>
+									<td>
+										#{empleadoClienteDetallesBean.apellido}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">#{translator['persona.identificacion']}:</td>
+									<td>
+										#{empleadoClienteDetallesBean.identificacion}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">#{translator['persona.correo']}:</td>
+									<td>
+										#{empleadoClienteDetallesBean.correo}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">#{translator['persona.contrasena']}:</td>
+									<td>
+										#{empleadoClienteDetallesBean.contrasena}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+	
+		</ui:define>
+	</ui:composition>
+</html>

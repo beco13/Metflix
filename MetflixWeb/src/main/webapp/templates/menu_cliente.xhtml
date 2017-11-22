@@ -1,20 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	>
 
-<ui:composition template="">
-	<ui:define name="header">
-	    Add your header here or delete to use the default
-	</ui:define>
-	<ui:define name="content">
-	    Add your content here or delete to use the default
-	</ui:define>
-	<ui:define name="footer">
-	    Add your footer here or delete to use the default
-	</ui:define>
-</ui:composition>
+	<ui:composition >
+		
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
+			
+				<li class="nav-item ">
+					<h:link class="nav-link" outcome="/pages/index">
+						#{translator['menu.inicio']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="/pages/auth/cliente/peliculas/lista">
+						#{translator['menu.peliculas']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="/pages/auth/cliente/ventas/lista">
+						Mis compras
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="/pages/auth/cliente/tickets/lista">
+						Tickets
+					</h:link>
+				</li>
+				
+			</ul>
+		</div>
+		
+	</ui:composition>
 </html>

@@ -1,62 +1,34 @@
 <!DOCTYPE html>
-<html 
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	>
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-	<ui:composition >
-			
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Metflix</a>
-			<button 
-				class="navbar-toggler" 
-				type="button" 
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+	<ui:composition>
 	
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
-				
-					<li class="nav-item ">
-						<h:link class="nav-link" outcome="/pages/index">
-							#{translator['menu.inicio']}
-						</h:link>
-					</li>
-					<li class="nav-item">
-						<h:link class="nav-link" outcome="/pages/auth/administrador/peliculas/lista">
-							#{translator['menu.peliculas']}
-						</h:link>
-					</li>
-					<li class="nav-item">
-						<h:link class="nav-link" outcome="/pages/auth/administrador/empleados/lista">
-							#{translator['menu.empleados']}
-						</h:link>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							#{translator['menu.ventas']}
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							#{translator['menu.cerrarSesion']}
-						</a>
-					</li>
-					
-				</ul>
-			</div>
-		</nav>
-		
-		
-		
-		
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto" style="margin: 0 auto;">
+	
+				<li class="nav-item ">
+					<h:link class="nav-link" outcome="/pages/index">
+						#{translator['menu.inicio']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="/pages/auth/administrador/peliculas/lista">
+						#{translator['menu.peliculas']}
+					</h:link>
+				</li>
+				<li class="nav-item">
+					<h:link class="nav-link" outcome="/pages/auth/administrador/empleados/lista">
+						#{translator['menu.empleados']}
+					</h:link>
+				</li>
+			</ul>
+		</div>
+	
+	
 	</ui:composition>
 </html>

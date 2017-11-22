@@ -9,10 +9,13 @@ import javax.persistence.*;
  *
  */
 @Entity
-@NamedQueries({ @NamedQuery(name = CalificacionesPelicula.GET_ALL, query = "select cp from CalificacionesPelicula cp"),
-		@NamedQuery(name = CalificacionesPelicula.GET_ALL_BY_PELICULA, query = "select cp from CalificacionesPelicula cp WHERE cp.pelicula = :pelicula_id") })
-@Table(name = "CALIFICACIONES_PELICULA")
-public class CalificacionesPelicula implements Serializable {
+@NamedQueries({ 
+	@NamedQuery(name = PeliculaCalificacion.GET_ALL, query = "select cp from PeliculaCalificacion cp"),
+	@NamedQuery(name = PeliculaCalificacion.GET_BY_CLIENTE_PELICULA, query = "select cp from PeliculaCalificacion cp WHERE cp.pelicula = :pelicula and cp.cliente = :cliente  "),
+	@NamedQuery(name = PeliculaCalificacion.GET_ALL_BY_PELICULA, query = "select cp from PeliculaCalificacion cp WHERE cp.pelicula = :pelicula") 
+})
+@Table(name = "PELICULA_CALIFICACION")
+public class PeliculaCalificacion implements Serializable {
 
 	@Id
 	@GeneratedValue
@@ -25,15 +28,16 @@ public class CalificacionesPelicula implements Serializable {
 	@ManyToOne
 	private Pelicula pelicula;
 
-	@Column(unique = true, length = 20)
-	private Integer calificacion;
+	@Column(length = 5)
+	private double calificacion;
 
 	private static final long serialVersionUID = 1L;
 
 	public static final String GET_ALL = "Calificaciones_pelicula_getAll";
 	public static final String GET_ALL_BY_PELICULA = "Calificaciones_pelicula_getAllByPelicula";
+	public static final String GET_BY_CLIENTE_PELICULA = "Calificaciones_pelicula_getByClientePelicula";
 
-	public CalificacionesPelicula() {
+	public PeliculaCalificacion() {
 		super();
 	}
 
@@ -53,11 +57,11 @@ public class CalificacionesPelicula implements Serializable {
 		this.pelicula = pelicula_id;
 	}
 
-	public Integer getCalificacion() {
+	public double getCalificacion() {
 		return this.calificacion;
 	}
 
-	public void setCalificacion(Integer calificacion) {
+	public void setCalificacion(double calificacion) {
 		this.calificacion = calificacion;
 	}
 

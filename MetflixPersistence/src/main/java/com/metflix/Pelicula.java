@@ -17,9 +17,8 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = Pelicula.FIND_BY_ID, query = "select pelicula from Pelicula pelicula where pelicula.id = :id" ),
-	@NamedQuery(name = Pelicula.FIND_BY_TITULO, query = "select pelicula from Pelicula pelicula where pelicula.titulo like :titulo" ),
+	@NamedQuery(name = Pelicula.GET_BY_SEARCH, query = "select pelicula from Pelicula pelicula where pelicula.titulo like :buscador OR CAST(pelicula.calificacion as CHAR(10)) like :buscador" ),
 	@NamedQuery(name = Pelicula.GET_ALL, query = "select pelicula from Pelicula pelicula" ),
-	@NamedQuery(name = Pelicula.GET_BY_CALIFICACION, query = "select pelicula from Pelicula pelicula where pelicula.calificacion = :calificacion" )
 })
 public class Pelicula implements Serializable {
 
@@ -28,9 +27,10 @@ public class Pelicula implements Serializable {
 	@Column(unique = true, nullable=false)
 	private Integer id;
 	
-	@Column(length = 45)
+	@Column(length = 100)
 	private String titulo;
 	
+	@Column(length = 700)
 	private String sinopsis;
 	
 	@Temporal(TemporalType.DATE)
@@ -40,6 +40,7 @@ public class Pelicula implements Serializable {
 	@Column(length = 100)
 	private String pais;
 	
+	@Column(length = 255)
 	private String reparto;
 	
 	@Column(length = 100)
@@ -51,24 +52,21 @@ public class Pelicula implements Serializable {
 	@ManyToOne
 	private Genero genero;
 
-	@Column(length = 56)
+	@Column(length = 255)
 	private String clasificacion;
 	
 	@Column(length = 3)
 	private Double calificacion;
 	
-	@ManyToMany
-	private List<Venta> ventas;
-	
 	@OneToMany(mappedBy="pelicula")
-	private List<CalificacionesPelicula> calificaciones;
+	private List<PeliculaCalificacion> calificaciones;
 	
 	private static final long serialVersionUID = 1L;
 	
 	public static final String FIND_BY_ID = "Pelicula_findById";
 	public static final String GET_ALL = "Pelicula_getAll";
-	public static final String FIND_BY_TITULO = "Pelicula_findByTitulo";
-	public static final String GET_BY_CALIFICACION = "Pelicula_findByCalificacion";
+	public static final String GET_BY_SEARCH = "Pelicula_findBySearch";
+	
 
 	public Pelicula() {
 		super();
@@ -164,30 +162,14 @@ public class Pelicula implements Serializable {
 		this.calificacion = calificacion;
 	}
 
-	public List<Venta> getVentas() {
-		return ventas;
-	}
 
-	public void setVentas(List<Venta> ventas) {
-		this.ventas = ventas;
-	}
-
-	public List<CalificacionesPelicula> getCalificaciones() {
+	public List<PeliculaCalificacion> getCalificaciones() {
 		return calificaciones;
 	}
 
-	public void setCalificaciones(List<CalificacionesPelicula> calificaciones) {
+	public void setCalificaciones(List<PeliculaCalificacion> calificaciones) {
 		this.calificaciones = calificaciones;
 	}
-
-	@Override
-	public String toString() {
-		return "Pelicula [id=" + id + ", titulo=" + titulo + ", sinopsis=" + sinopsis + ", fechaEstreno="
-				+ fechaEstreno + ", pais=" + pais + ", reparto=" + reparto + ", director=" + director + ", idioma="
-				+ idioma + ", genero=" + genero + ", clasificacion=" + clasificacion + ", ventas=" + ventas + ", calificaciones="
-				+ calificaciones + "]";
-	}
-	
 	
 	
 }

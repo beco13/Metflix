@@ -25,10 +25,10 @@ public class AdministradorPeliculaListaBean {
 	}
 
 	/**
-	 * permite buscar peliculas por nombre
+	 * permite buscar peliculas por nombre o por calificación
 	 */
 	public void buscarPeliculas() {
-		peliculas = administradorEJB.buscarPeliculaPorTitulo(filtro);
+		peliculas = administradorEJB.buscarPelicula(filtro);
 	}
 
 	/**

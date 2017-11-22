@@ -14,11 +14,12 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Venta.GET_ALL, query = "select vta from Venta vta" )
+	@NamedQuery(name = Venta.FIND_BY_ID, query = "select venta from Venta venta where venta.id = :id" ),
+	@NamedQuery(name = Venta.GET_ALL, query = "select vta from Venta vta" ),
+	@NamedQuery(name = Venta.GET_ALl_BY_CLIENT, query = "select vta from Venta vta WHERE vta.cliente = :cliente" )
 })
 
 public class Venta implements Serializable {
-
 	   
 	@Id
 	@GeneratedValue
@@ -32,12 +33,11 @@ public class Venta implements Serializable {
 	@ManyToOne
 	private Cliente cliente;
 		
-	@ManyToMany(mappedBy="ventas")
-	private List<Pelicula> peliculas;
-		
 	private static final long serialVersionUID = 1L;
 	
+	public static final String FIND_BY_ID = "Venta_getById";
 	public static final String GET_ALL = "Venta_getAll";
+	public static final String GET_ALl_BY_CLIENT = "Venta_getAllByClient";
 	
 	
 	public Venta() {
@@ -65,18 +65,5 @@ public class Venta implements Serializable {
 		this.fecha = fecha;
 	}
 	
-	public List<Pelicula> getPeliculas() {
-		return peliculas;
-	}
-
-	public void setPeliculas(List<Pelicula> peliculas) {
-		this.peliculas = peliculas;
-	}
-	
-
-	@Override
-	public String toString() {
-		return "Venta [id=" + id + ", fecha=" + fecha + ", cliente=" + cliente + ", peliculas=" + peliculas + "]";
-	}
 
 }

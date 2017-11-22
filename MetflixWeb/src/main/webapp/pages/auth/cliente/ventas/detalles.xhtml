@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Detalles de la Compra · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+		 	<f:event type="preRenderView" listener="#{clienteVentaDetallesBean.init}" />
+			
+			<h2 class="text-center">
+				Detalles de la Compra
+			</h2>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+		
+						<table class="table">
+		
+							<tbody>
+								<tr>
+									<td class="text-right font-weight-bold">Código de Venta:</td>
+									<td>
+										#{clienteVentaDetallesBean.id}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Fecha:</td>
+									<td>
+										#{clienteVentaDetallesBean.fecha}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Cliente:</td>
+									<td>
+										#{clienteVentaDetallesBean.cliente.nombre}
+										#{clienteVentaDetallesBean.cliente.apellido} - 
+										#{clienteVentaDetallesBean.cliente.identificacion} - 
+										#{clienteVentaDetallesBean.cliente.correo}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>
+										#{translator['pelicula.titulo']}
+									</th>
+									<th>
+										#{translator['pelicula.fechaEstreno']}
+									</th>
+									<th>
+										#{translator['pelicula.idioma']}
+									</th>
+									<th>
+										#{translator['pelicula.clasificacion']}
+									</th>
+									<th>
+										#{translator['pelicula.calificacion']}
+									</th>
+									<th>
+										#{translator['generalTabla.opciones']}
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+		
+								<ui:repeat var="item" varStatus="status" value="#{clienteVentaDetallesBean.items}">
+									<tr>
+										<td>#{item.pelicula.id}</td>
+										<td>#{item.pelicula.titulo}</td>
+										<td>#{item.pelicula.fechaEstreno}</td>
+										<td>#{item.pelicula.idioma}</td>
+										<td>#{item.pelicula.clasificacion}</td>
+										<td>#{item.pelicula.calificacion}</td>
+										<td>
+											<h:link class="btn btn-light" outcome="/pages/auth/cliente/peliculas/calificar?id=#{item.pelicula.id}">
+												<i class="fa fa-bookmark" aria-hidden="true"></i>
+											</h:link>
+										</td>
+									</tr>
+								</ui:repeat>
+		
+							</tbody>
+						</table>
+						
+						
+					</div>
+				</div>
+			</div>
+			
+	
+		</ui:define>
+	</ui:composition>
+</html>

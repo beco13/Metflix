@@ -6,8 +6,8 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<ui:composition template="/templates/template_root.xhtml">
-		<ui:define name="header">
-	
+		<ui:define name="title">
+			Iniciar Sesión · Metflix
 		</ui:define>
 		<ui:define name="content">
 	
@@ -15,10 +15,10 @@
 				<div class="row justify-content-center">
 					<div class="col-md-6 ">
 					
+					
 						<div class="text-center">
 							<img src="/MetflixWeb/assets/images/logo-metflix.jpg" class="img-fluid logo-login" alt="logo" />
 						</div>
-						
 					
 						<br />
 						<br />
@@ -33,7 +33,7 @@
 											class="form-control" 
 											id="emailPersona" 
 											type="email"
-											jsf:value="#{authBean.correo}" 
+											jsf:value="#{authBean.user.correo}" 
 											/>
 										<small
 											 class="form-text text-muted">
@@ -42,20 +42,20 @@
 							</div>
 							
 							<div class="form-group">
-									<label for="calificacionPelicula">
-										Contraseña:
-									</label>
-									 <input
-											required="required" 
-											class="form-control" 
-											id="correo" 
-											type="email"
-											jsf:value="#{authBean.contrasenia}" 
-											/>
-										<small
-											 class="form-text text-muted">
-											Ingrese la contraseña
-										</small>
+								<label for="passPersona">
+									Contraseña:
+								</label>
+								 <input
+										required="required" 
+										class="form-control" 
+										id="passPersona" 
+										type="password"
+										jsf:value="#{authBean.user.contrasena}" 
+										/>
+									<small
+										 class="form-text text-muted">
+										Ingrese la contraseña
+									</small>
 							</div>
 							
 							<div class="text-center">
@@ -63,15 +63,20 @@
 								<button 
 									type="submit" 
 									class="btn btn-success" 
-									jsf:action="#{authBean.authenticate}"
+									jsf:action="#{authBean.login}"
 									>
 						 			Iniciar Sesión
 						 		</button>
+						 		
+						 		<br />
+						 		<br />
 						 		
 						 		
 						 		<h:link class="btn btn-info" outcome="recordarPassword">
 									¿Olvidó la contraseña?
 								</h:link>
+								
+								<h:outputText value="&#160;" />
 								
 								<h:link class="btn btn-primary" outcome="registrarse">
 									Crear Cuenta

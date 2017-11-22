@@ -7,17 +7,12 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<ui:composition template="/templates/template_root.xhtml">
 		<ui:define name="title">
-			Formulario de Empleados · Metflix
+			Agregar Empleado · Metflix
 		</ui:define>
 		<ui:define name="content">
 	
-			<f:event type="preRenderView" listener="#{administradorPeliculaFormularioBean.initView}" />
-	
-			<form jsf:id="formPelicula">
+			<form jsf:id="formEmpleado">
 			
-				<input class="form-control"
-					required="required" id="idPelicula" type="hidden"
-					jsf:value="#{administradorPeliculaFormularioBean.id}" />
 							
 				<div class="container">
 					<div class="row">
@@ -26,7 +21,7 @@
 							
 							<div class="form-group">
 								<label for="nombreEmpleado">Nombre:</label> 
-								<input  class="form-control" required="required" id="nombreEmpleado" type="text" jsf:value="#{empleadoBean.nombre}" />
+								<input  class="form-control" required="required" id="nombreEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.nombre}" />
 								<small
 									 class="form-text text-muted">
 									We'll never share your email with anyone else.
@@ -36,7 +31,7 @@
 							
 							<div class="form-group">
 								<label for="apellidoEmpleado">Apellido:</label> 
-								<input class="form-control" required="required" id="apellidoEmpleado" type="text" jsf:value="#{empleadoBean.apellido}" />
+								<input class="form-control" required="required" id="apellidoEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.apellido}" />
 								<small
 									 class="form-text text-muted">
 									We'll never share your email with anyone else.
@@ -45,7 +40,7 @@
 							
 							<div class="form-group">
 								<label for="identificacionEmpleado">Identificación:</label> 
-								<input class="form-control" required="required" id="identificacionEmpleado" type="text" jsf:value="#{empleadoBean.apellido}" />
+								<input class="form-control" required="required" id="identificacionEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.identificacion}" />
 								<small
 									 class="form-text text-muted">
 									We'll never share your email with anyone else.
@@ -54,7 +49,7 @@
 							
 							<div class="form-group">
 								<label for="correoEmpleado">Correo:</label> 
-								<input class="form-control" required="required" id="correoEmpleado" type="email" jsf:value="#{empleadoBean.correo}" />
+								<input class="form-control" required="required" id="correoEmpleado" type="email" jsf:value="#{administradorEmpleadoFormularioBean.correo}" />
 								<small
 									 class="form-text text-muted">
 									We'll never share your email with anyone else.
@@ -64,7 +59,7 @@
 							
 							<div class="form-group">
 								<label for="contrasenaEmpleado">Contraseña:</label> 
-								<input class="form-control" required="required" id="contrasenaEmpleado" type="password" jsf:value="#{empleadoBean.contrasena}" />
+								<input class="form-control" required="required" id="contrasenaEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.contrasena}" />
 								<small
 									 class="form-text text-muted">
 									We'll never share your email with anyone else.
@@ -78,7 +73,7 @@
 							<button 
 								type="submit" 
 								class="btn btn-success" 
-								jsf:action="#{administradorPeliculaFormularioBean.guardar}"
+								jsf:action="#{administradorEmpleadoFormularioBean.guardar}"
 								>
 					 			#{translator['label.guardar']}
 					 		</button>

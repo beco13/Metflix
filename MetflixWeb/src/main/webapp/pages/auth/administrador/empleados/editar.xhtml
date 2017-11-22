@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Editar Empleado · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+			<f:event type="preRenderView" listener="#{administradorEmpleadoFormularioBean.initView}" />
+	
+			<form jsf:id="formEmpleado">
+			
+				<input 
+					class="form-control"
+					id="idEmpleado" 
+					type="hidden"
+					jsf:value="#{administradorEmpleadoFormularioBean.id}" 
+						/>
+							
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 ">
+			
+							
+							<div class="form-group">
+								<label for="nombreEmpleado">Nombre:</label> 
+								<input  class="form-control" required="required" id="nombreEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.nombre}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+							
+							<div class="form-group">
+								<label for="apellidoEmpleado">Apellido:</label> 
+								<input class="form-control" required="required" id="apellidoEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.apellido}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+							<div class="form-group">
+								<label for="identificacionEmpleado">Identificación:</label> 
+								<input class="form-control" required="required" id="identificacionEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.identificacion}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+							<div class="form-group">
+								<label for="correoEmpleado">Correo:</label> 
+								<input class="form-control" required="required" id="correoEmpleado" type="email" jsf:value="#{administradorEmpleadoFormularioBean.correo}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+							
+							<div class="form-group">
+								<label for="contrasenaEmpleado">Contraseña:</label> 
+								<input class="form-control" required="required" id="contrasenaEmpleado" type="text" jsf:value="#{administradorEmpleadoFormularioBean.contrasena}" />
+								<small
+									 class="form-text text-muted">
+									We'll never share your email with anyone else.
+								</small>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<button 
+								type="submit" 
+								class="btn btn-success" 
+								jsf:action="#{administradorEmpleadoFormularioBean.guardar}"
+								>
+					 			#{translator['label.guardar']}
+					 		</button>
+						</div>
+					</div>
+				</div>
+
+			</form>
+			<h:messages />
+			
+			<br />
+			<br />		 	
+	
+		</ui:define>
+	</ui:composition>
+</html>

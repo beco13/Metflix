@@ -14,11 +14,11 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Respuesta.GET_ALL, query = "select resp from Respuesta resp" )
+	@NamedQuery(name = TicketRespuesta.GET_ALL, query = "select resp from TicketRespuesta resp" ),
+	@NamedQuery(name = TicketRespuesta.GET_BY_TICKET, query = "select resp from TicketRespuesta resp WHERE resp.ticket = :ticket" )
 })
-
-public class Respuesta implements Serializable {
-
+@Table(name = "TICKET_RESPUESTA")
+public class TicketRespuesta implements Serializable {
 	   
 	@Id
 	@GeneratedValue
@@ -35,13 +35,14 @@ public class Respuesta implements Serializable {
 	private Empleado empleado;
 	
 	@OneToOne
-	private Tiquet tiquet;
+	private Ticket ticket;
 	
 	private static final long serialVersionUID = 1L;
 	
 	public static final String GET_ALL = "Respuesta_getAll";
+	public static final String GET_BY_TICKET = "Respuesta_getFromTicket";
 
-	public Respuesta() {
+	public TicketRespuesta() {
 		super();
 	}   
 	public Integer getId() {
@@ -73,18 +74,16 @@ public class Respuesta implements Serializable {
 		this.empleado = empleado;
 	}   
 	
-	public Tiquet getTiquet() {
-		return this.tiquet;
+	public Ticket getTicket() {
+		return ticket;
 	}
-
-	public void setTiquet(Tiquet tiquet) {
-		this.tiquet = tiquet;
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
 	}
-	
 	@Override
 	public String toString() {
 		return "Respuesta [id=" + id + ", descripcion=" + descripcion + ", fecha=" + fecha + ", empleado=" + empleado
-				+ ", tiquet=" + tiquet + "]";
+				+ ", tiquet=" + ticket + "]";
 	}
 	
 }

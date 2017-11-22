@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Detalles del Ticket · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+		 	<f:event type="preRenderView" listener="#{clienteTicketDetallesBean.init}" />
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					
+						<h2 class="text-center">
+							Detalles del Ticket
+						</h2>
+					
+						<table class="table">
+		
+							<tbody>
+								<tr>
+									<td class="text-right font-weight-bold">Fecha:</td>
+									<td>
+										#{clienteTicketDetallesBean.fecha}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Asunto:</td>
+									<td>
+										#{clienteTicketDetallesBean.asunto}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Descripción:</td>
+									<td>
+										#{clienteTicketDetallesBean.descripcion}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Cliente:</td>
+									<td>
+										#{clienteTicketDetallesBean.cliente.nombre} #{clienteTicketDetallesBean.cliente.apellido} -  #{clienteTicketDetallesBean.cliente.identificacion} 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="row" jsf:rendered="#{clienteTicketDetallesBean.estado eq false}">
+					<div class="col-md-12">
+					
+						<h3 class="text-center">
+							Parece que no han dado respuesta a tu mensaje
+						</h3>
+						 
+					</div>
+				</div>	
+				
+				<div class="row" jsf:rendered="#{clienteTicketDetallesBean.estado eq true}" >
+					<div class="col-md-12">
+						<h3 class="text-center">
+							Detalles de la Respuesta
+						</h3>
+						 
+						<table class="table">
+		
+							<tbody>
+								<tr>
+									<td class="text-right font-weight-bold">Fecha:</td>
+									<td>
+										#{clienteTicketDetallesBean.respuesta.fecha}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Empleado:</td>
+									<td>
+										#{clienteTicketDetallesBean.respuesta.empleado.nombre} #{clienteTicketDetallesBean.respuesta.empleado.apellido}
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right font-weight-bold">Respuesta:</td>
+									<td>
+										#{clienteTicketDetallesBean.respuesta.descripcion}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					
+						
+					</div>
+				</div>
+					
+			</div>
+			
+	
+		</ui:define>
+	</ui:composition>
+</html>

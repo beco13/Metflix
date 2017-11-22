@@ -13,25 +13,18 @@ import javax.mail.internet.MimeMultipart;
 
 public class Correo {
 	
-	private final String SMTP_USERNAME = "AKIAIPV4R6K7UDLLL2CQ";
-	private final String SMTP_PASS = "AgkDJwfa+BgFxTUJe5aUYN/R1s1UJgHUvtDkaCkZFto9";
-	private final String SMTP_URL = "email-smtp.us-west-2.amazonaws.com";
-	private final String SMTP_PORT = "465";
+	private final String SMTP_USERNAME = "odontoprofesional.info@gmail.com";
+	private final String SMTP_PASS = "zo85HzqGiS";
+	private final String SMTP_URL = "smtp.gmail.com";
+	private final int SMTP_PORT = 587;
 	private final String SMTP_USE_TLS = "true";
 	
-	private final String USER_FROM = "info@metflixu.co";
-	private final String ASUNTO = "Recuperación de contraseña";
+	private final String USER_FROM = "info@metflix.co";
 	
+	private String asunto;
 	private String mensaje ;
 	private String emailDestinatario;
 	
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
-
-	public void setEmailDestinatario(String emailDestinatario) {
-		this.emailDestinatario = emailDestinatario;
-	}
 
 	/**
 	 * metodo el cual controla las funcionalidades de el envio de correos
@@ -40,33 +33,28 @@ public class Correo {
 	 */
 	public boolean enviar() {
 		try {
-			Properties p = new Properties();
-			p.put("mail.smtp.host", SMTP_URL);
-			p.setProperty("mail.smtp.starttls.enable", SMTP_USE_TLS);
-			p.setProperty("mail.smtp.port", SMTP_PORT);
-			p.setProperty("mail.smtp.user", SMTP_USERNAME);
-			p.setProperty("mail.smtp.auth", "true");
+			Properties props = new Properties();
+			props.put("mail.smtp.host", SMTP_URL);
+			props.put("mail.smtp.starttls.enable", SMTP_USE_TLS);
+			props.put("mail.smtp.port", SMTP_PORT);
+			props.put("mail.smtp.user", SMTP_USERNAME);
+			props.put("mail.smtp.password", SMTP_PASS);
+			props.put("mail.smtp.auth", "true");
 
-			Session s = Session.getDefaultInstance(p, null);
+			Session sesion = Session.getDefaultInstance(props, null);
 			
-			BodyPart texto = new MimeBodyPart();
-			texto.setText(mensaje);
-			MimeMultipart m = new MimeMultipart();
-			m.addBodyPart(texto);
 			
-			MimeMessage mimeMensaje = new MimeMessage(s);
+			MimeMessage message = new MimeMessage(sesion);
 
-			mimeMensaje.setFrom(new InternetAddress(USER_FROM));
-			mimeMensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(emailDestinatario));
-			mimeMensaje.setSubject(ASUNTO);
-			mimeMensaje.setContent(m);
-
-			Transport t = s.getTransport("smtp");
-
-			t.connect(SMTP_USERNAME, SMTP_PASS);
-
-			t.sendMessage(mimeMensaje, mimeMensaje.getAllRecipients());
-			t.close();
+			message.setFrom(new InternetAddress(USER_FROM));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailDestinatario));
+			message.setSubject(asunto);
+			message.setContent(mensaje, "text/html");
+			
+			
+			Transport transport = sesion.getTransport("smtp");
+			transport.connect(SMTP_URL, SMTP_PORT, SMTP_USERNAME, SMTP_PASS);
+			transport.sendMessage(message, message.getAllRecipients());
 			return true;
 
 		} catch (Exception e) {
@@ -77,6 +65,24 @@ public class Correo {
 		
 		
 
+	}
+	
+	
+
+	public String getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(String asunto) {
+		this.asunto = asunto;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public void setEmailDestinatario(String emailDestinatario) {
+		this.emailDestinatario = emailDestinatario;
 	}
 
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Detalles de la Pelicula · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+		 	<f:event type="preRenderView" listener="#{clientePeliculaDetallesBean.init}" />
+			
+			<h2 class="text-center">
+				Detalles de la Pelicula
+			</h2>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+		
+						<table class="table">
+		
+							<tbody>
+								<tr>
+									<td class="text-right font-weight-bold">#{translator['pelicula.calificacion']}:</td>
+									<td>#{clientePeliculaDetallesBean.calificacion}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.clasificacion']}:</td>
+									<td>#{clientePeliculaDetallesBean.clasificacion}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold"> #{translator['pelicula.director']}:</td>
+									<td>#{clientePeliculaDetallesBean.director}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.fechaEstreno']}:</td>
+									<td>#{clientePeliculaDetallesBean.fecha_estreno}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.idioma']}:</td>
+									<td>#{clientePeliculaDetallesBean.idioma}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.pais']}:</td>
+									<td>#{clientePeliculaDetallesBean.pais}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.reparto']}:</td>
+									<td>#{clientePeliculaDetallesBean.reparto}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.sinopsis']}:</td>
+									<td>#{clientePeliculaDetallesBean.sinopsis}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.titulo']}:</td>
+									<td>#{clientePeliculaDetallesBean.titulo}</td>
+								</tr>
+								<tr>
+		
+									<td class="text-right font-weight-bold">#{translator['pelicula.genero']}:</td>
+									<td>#{clientePeliculaDetallesBean.genero}</td>
+								</tr>
+		
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+	
+		</ui:define>
+	</ui:composition>
+</html>

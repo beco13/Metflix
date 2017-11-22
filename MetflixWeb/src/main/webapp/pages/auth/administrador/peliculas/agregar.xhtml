@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	>
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Formulario de Peliculas · Metflix
+		</ui:define>
+		<ui:define name="content">
+	
+			<form jsf:id="formPelicula">
+							
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 ">
+			
+										
+							<div class="form-group">
+									<label for="calificacionPelicula">#{translator['pelicula.calificacion']}:</label>
+									 <input
+										required="required" class="form-control" id="calificacionPelicula" type="number"
+										jsf:value="#{administradorPeliculaFormularioBean.calificacion}" />
+										<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+							
+							<div class="form-group">
+									<label for="clasificacionPelicula">#{translator['pelicula.clasificacion']}:</label> 
+									<input class="form-control" required="required" id="clasificacionPelicula"  type="text" jsf:value="#{administradorPeliculaFormularioBean.clasificacion}" />
+										<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+							
+							<div class="form-group">
+								<label for="directorPelicula">#{translator['pelicula.director']}:</label> 
+								<input class="form-control" required="required" id="directorPelicula"  type="text" jsf:value="#{administradorPeliculaFormularioBean.director}" />
+								
+									<small
+										 class="form-text text-muted">
+										We'll never share your email with anyone else.
+									</small>
+							</div>
+							
+							<div class="form-group">
+								<label for="fecha_estrenoPelicula">#{translator['pelicula.fechaEstreno']}:</label>
+								<h:inputText id="fecha_estreno" class="form-control" required="required" value="#{administradorPeliculaFormularioBean.fecha_estreno}" >
+									<f:convertDateTime pattern="yyyy-mm-dd"></f:convertDateTime>
+								</h:inputText> 
+									<small
+										 class="form-text text-muted">
+										#{translator['registrarPelicula.infoFechaEstreno']}
+									</small>
+							</div>
+							
+							<div class="form-group">
+									<label for="idiomaPelicula">#{translator['pelicula.idioma']}:</label> 
+									<input class="form-control"
+										required="required" id="idiomaPelicula" type="text"
+										jsf:value="#{administradorPeliculaFormularioBean.idioma}" /> 
+										
+										<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+										
+			
+						</div>
+						<div class="col-md-6 ">
+			
+										
+							<div class="form-group">
+								<label
+									for="paisPelicula">#{translator['pelicula.pais']}:</label> <input required="required" class="form-control"
+									id="paisPelicula" type="text" jsf:value="#{administradorPeliculaFormularioBean.pais}" />
+									<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+							
+							<div class="form-group">
+							
+								<label for="repartoPelicula">#{translator['pelicula.reparto']}:</label> 
+								<input class="form-control"
+								required="required" id="repartoPelicula" type="text"
+								jsf:value="#{administradorPeliculaFormularioBean.reparto}" /> 
+								<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+							
+							<div class="form-group">
+								<label
+								for="sinopsisPelicula">#{translator['pelicula.sinopsis']}:</label>
+								<input class="form-control"
+								required="required" id="sinopsisPelicula" type="text"
+								jsf:value="#{administradorPeliculaFormularioBean.sinopsis}" /> 
+								<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+							
+							<div class="form-group">
+								<label
+								for="tituloPelicula">#{translator['pelicula.titulo']}:</label> 
+								<input required="required" class="form-control"
+								id="tituloPelicula" type="text" jsf:value="#{administradorPeliculaFormularioBean.titulo}" />
+								<small
+											 class="form-text text-muted">
+											We'll never share your email with anyone else.
+										</small>
+							</div>
+							
+							<div class="form-group">
+								<label for="generoPelicula">#{translator['pelicula.genero']}:</label>
+								<h:selectOneMenu value="#{administradorPeliculaFormularioBean.genero}" class="form-control" required="required" id="generoPelicula">
+									<f:selectItem itemLabel="Seleccione un genero" noSelectionOption="true"></f:selectItem>
+									<f:selectItems itemLabel="#{genero.nombre}" value="#{administradorPeliculaFormularioBean.generos}" var="genero" itemValue="#{genero.id}"></f:selectItems>
+								</h:selectOneMenu>
+								
+									<small  class="form-text text-muted">
+										We'll never share your email with anyone else.
+									</small>
+							</div>
+							
+			
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+					
+					
+							<button 
+								type="submit" 
+								class="btn btn-success" 
+								jsf:action="#{administradorPeliculaFormularioBean.guardar}"
+								>
+					 			#{translator['label.guardar']}
+					 		</button>
+						</div>
+					</div>
+				</div>
+
+			</form>
+			<h:messages />
+			
+			<br />
+			<br />
+						 	
+	
+		</ui:define>
+	</ui:composition>
+</html>

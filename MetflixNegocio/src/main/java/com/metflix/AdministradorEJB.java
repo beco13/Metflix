@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
 /**
  * Session Bean implementation class AdministradorEJB
  */
@@ -19,7 +18,6 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 
 	@PersistenceContext
 	private EntityManager em;
-	
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -117,10 +115,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	public void eliminarGenero(Integer id) {
 
 		Genero tmpGenero = buscarGeneroPorId(id);
-
-		em.getTransaction().begin();
 		em.remove(tmpGenero);
-		em.getTransaction().commit();
 	}
 
 	/**
@@ -150,36 +145,32 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 */
 	public Pelicula registrarPelicula(String titulo, Double calificacion, String clasificacion, String director,
 			Date fechaEstreno, int genero_id, String idioma, String pais, String reparto, String sinopsis) {
-		
-			Genero genero = buscarGeneroPorId(genero_id);
-			
-		
-			Pelicula pelicula= null;
 
-			pelicula = new Pelicula();
-			pelicula.setTitulo(titulo);
-			pelicula.setCalificacion(calificacion);
-			pelicula.setClasificacion(clasificacion);
-			pelicula.setDirector(director);
-			pelicula.setFechaEstreno(new Date());
-			if(genero != null) {
-				pelicula.setGenero(genero);
-			}
-			pelicula.setIdioma(idioma);
-			pelicula.setPais(pais);
-			pelicula.setReparto(reparto);
-			pelicula.setSinopsis(sinopsis);
+		Genero genero = buscarGeneroPorId(genero_id);
 
-			// guardamos el registro
-			em.persist(pelicula);
-			em.flush();
+		Pelicula pelicula = null;
 
-			
-		
-		
-		//Genero tmpGenero = buscarGeneroPorId(genero);
+		pelicula = new Pelicula();
+		pelicula.setTitulo(titulo);
+		pelicula.setCalificacion(calificacion);
+		pelicula.setClasificacion(clasificacion);
+		pelicula.setDirector(director);
+		pelicula.setFechaEstreno(new Date());
+		if (genero != null) {
+			pelicula.setGenero(genero);
+		}
+		pelicula.setIdioma(idioma);
+		pelicula.setPais(pais);
+		pelicula.setReparto(reparto);
+		pelicula.setSinopsis(sinopsis);
+
+		// guardamos el registro
+		em.persist(pelicula);
+		em.flush();
+
+		// Genero tmpGenero = buscarGeneroPorId(genero);
 		return pelicula;
-	
+
 	}
 
 	/**
@@ -188,16 +179,6 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	@SuppressWarnings("unchecked")
 	public List<Pelicula> consultarPeliculas() {
 		Query query = em.createNamedQuery(Pelicula.GET_ALL);
-		return Collections.checkedList(query.getResultList(), Pelicula.class);
-	}
-
-	/**
-	 * permite consultar las peliculas que hay registradas
-	 */
-	@SuppressWarnings("unchecked")
-	public List<Pelicula> consultarPeliculasByCalificacion(Double calificacion) {
-		Query query = em.createNamedQuery(Pelicula.GET_BY_CALIFICACION);
-		query.setParameter("calificacion", calificacion);
 		return Collections.checkedList(query.getResultList(), Pelicula.class);
 	}
 
@@ -212,20 +193,19 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		query.setParameter("id", pelicula_id);
 		return (Pelicula) query.getSingleResult();
 	}
-	
+
 	/**
-	 * metodo que permite buscar una pelicula por el titulo
+	 * metodo que permite buscar una pelicula por el titulo or por una calificación
 	 * 
-	 * @param titulo
+	 * @param filtro
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Pelicula> buscarPeliculaPorTitulo(String titulo) {
-		Query query = em.createNamedQuery(Pelicula.FIND_BY_TITULO);
-		query.setParameter("titulo", "%"+titulo+"%");
+	public List<Pelicula> buscarPelicula(String filtro) {
+		Query query = em.createNamedQuery(Pelicula.GET_BY_SEARCH);
+		query.setParameter("buscador", "%" + filtro + "%");
 		return Collections.checkedList(query.getResultList(), Pelicula.class);
 	}
-	
 
 	/**
 	 * permite actualizar la informacion de una pelicula
@@ -270,11 +250,10 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 * 
 	 * @param id
 	 *            integer
-	 */ 
-	public void eliminarPelicula(Integer id) 
-	{
+	 */
+	public void eliminarPelicula(Integer id) {
 
-		Pelicula tmpPelicula = buscarPeliculaPorId(id);		
+		Pelicula tmpPelicula = buscarPeliculaPorId(id);
 		em.remove(tmpPelicula);
 	}
 
@@ -287,13 +266,11 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 * @param correo
 	 * @param contrasena
 	 */
-	public Empleado registrarEmpleado(String identificacion, String nombre, String apellido, String correo,
-			String contrasena) {
+	public Empleado registrarEmpleado(String identificacion, String nombre, String apellido, String correo, String contrasena) {
 
 		Empleado empleado = new Empleado();
 		empleado.setIdentificacion(identificacion);
 		empleado.setNombre(nombre);
-		
 		empleado.setApellido(apellido);
 		empleado.setCorreo(correo);
 		empleado.setContrasena(contrasena);
@@ -305,27 +282,6 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		return empleado;
 	}
 
-	public boolean registrarEmpleado2(String identificacion, String nombre, String apellido, String email,
-			String contrasena) {
-
-		if (entityManager.find(Empleado.class, identificacion) != null) {
-
-			System.out.println("El usuario ya est� registrado");
-
-		} else {
-			Empleado empleado = new Empleado();
-			empleado.setIdentificacion(identificacion);
-			empleado.setNombre(nombre);
-			empleado.setApellido(apellido);
-			empleado.setContrasena(contrasena);
-			empleado.setCorreo(email);
-
-			entityManager.persist(empleado);
-			return true;
-		}
-		return false;
-
-	}
 
 	/**
 	 * permite consultar las peliculas que hay registradas
@@ -354,10 +310,11 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	 * @param cedula
 	 * @return
 	 */
-	public Empleado buscarEmpleadoPorCedula(String cedula) {
+	@SuppressWarnings("unchecked")
+	public List<Empleado> buscarEmpleadoPorCedula(String cedula) {
 		Query query = em.createNamedQuery(Empleado.FIND_BY_CEDULA);
-		query.setParameter("identificacion", cedula);
-		return (Empleado) query.getSingleResult();
+		query.setParameter("identificacion", "%"+cedula+"%");
+		return Collections.checkedList(query.getResultList(), Empleado.class);
 	}
 
 	/**
@@ -393,10 +350,7 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 	public void eliminarEmpleado(Integer id) {
 
 		Empleado empleado = buscarEmpleadoPorId(id);
-
-		em.getTransaction().begin();
 		em.remove(empleado);
-		em.getTransaction().commit();
 	}
 
 	/**
@@ -417,35 +371,22 @@ public class AdministradorEJB implements AdministradorEJBRemote {
 		return (Integer) query.getSingleResult();
 	}
 
+	
 	/**
-	 * 
-	 * Permite buscar un administrador por el correo y luego le envia la contraseña
-	 * al email que el administrador tenga registrado
-	 * 
+	 * permite consultar un administrador por el correo
 	 * 
 	 * @param correo
 	 * @return
 	 */
-	public int recuperarPassword(String correo) {
-
-		Administrador administrador = null;
-
+	public Administrador remember(String correo) {
 		try {
-			Query query = em.createNamedQuery(Administrador.REQUEST_PASS);
+			Query query = em.createNamedQuery(Administrador.GET_BY_EMAIL);
 			query.setParameter("correo", correo);
-			administrador = (Administrador) query.getSingleResult();
+			return (Administrador) query.getSingleResult();
 		} catch (Exception e) {
 			// TODO: handle exception
-			return -1;
+			return null;
 		}
-
-		Correo tmpCorreo = new Correo();
-		tmpCorreo.setEmailDestinatario(correo);
-		tmpCorreo.setMensaje("Has solicitado recuperar la contraseña para lo cual esta es tu contraseña: "
-				+ administrador.getContrasena());
-
-		return tmpCorreo.enviar() ? 1 : 0;
 	}
-	
 
 }

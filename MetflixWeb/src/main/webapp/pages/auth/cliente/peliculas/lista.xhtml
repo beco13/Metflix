@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	>
+	<ui:composition template="/templates/template_root.xhtml">
+		<ui:define name="title">
+			Peliculas · Metflix
+		</ui:define>
+		<ui:define name="content">
+		
+			<h2 class="text-center">
+				Peliculas
+			</h2>
+		
+	
+			<div class="container">
+		
+				<div class="row">
+					<div class="col-md-4">
+						<form jsf:id="formFiltroPelicula">
+								<div class="form-group">
+									<label for="ListaPeliculafiltro">
+										Buscar:
+									</label> 
+									<input
+										required="required" id="ListaPeliculafiltro" type="text" class="form-control"
+										jsf:value="#{clientePeliculaListaBean.filtro}" /> 
+										<small
+											 class="form-text text-muted">
+											Actualmente solo se busca por título
+										</small>
+								</div>
+								 <button 
+								 	type="submit" 
+									class="btn btn-info"
+									jsf:action="#{clientePeliculaListaBean.buscar}"
+								 		>
+						 			buscar
+						 		</button>
+						</form>
+					</div>
+					<div class="col-md-8">
+						<form jsf:id="ListarTodasLasPeliculas">
+							<button 
+							 	type="submit" 
+								class="btn btn-success"
+								jsf:action="#{clientePeliculaListaBean.listar}"
+							 		>
+					 			Mostrar todos los registros
+					 		</button>
+					 		<h:outputText value="&#160;" />
+					 		<h:link class="btn btn-info" outcome="checkout">
+								Carrito: 
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+								<span class="badge badge-light">
+									#{carritoComprasBean.totalItems()}
+								</span>
+							</h:link>
+						</form>
+						
+					</div>
+				</div>
+				
+				<BR />
+				<BR />
+					
+				<div class="row">
+				
+	
+					<ui:repeat var="pelicula" varStatus="status" value="#{clientePeliculaListaBean.peliculas}">
+						
+							
+						<div class="col-md">
+							<div class="card" style="width: 20rem;">
+								<div class="card-body">
+									<h4 class="card-title">
+										#{pelicula.titulo}
+									</h4>
+									<h6 class="card-subtitle mb-2 text-muted">
+										#{pelicula.genero.nombre}
+									</h6>
+									<p class="card-text">
+										#{pelicula.sinopsis}
+									</p>
+									
+							 		<form jsf:id="formAgregarItemCarrito">
+								 		<h:link class="btn btn-light" outcome="detalles?id=#{pelicula.id}">
+											Ver detalles
+										</h:link>
+										<h:outputText value="&#160;" />
+								 		<button type="submit" class="btn btn-info" jsf:action="#{carritoComprasBean.agregarItem(pelicula.id)}"  >
+								 			Agregar al carrito 
+								 		</button>
+								 	</form>
+								</div>
+							</div>
+						</div>
+						
+						
+					</ui:repeat>
+
+				
+				</div>
+			</div>
+				 	
+	
+		</ui:define>
+	</ui:composition>
+</html>
